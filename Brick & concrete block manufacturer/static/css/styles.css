@@ -1,0 +1,1526 @@
+/* TitanStone & Luxeris Masonry & Concrete Works - International Engineering Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Chivo:wght@400;600;700;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --color-slate-950: #060911;
+  --color-navy-midnight: #0a0f1d;
+  --color-navy-deep: #070b16;
+  --color-slate-900: #0f141e;
+  --color-slate-800: #1b2230;
+  --color-slate-700: #2c364c;
+  --color-slate-600: #475569;
+  --color-concrete: #cbd5e1;
+  --color-concrete-light: #f1f5f9;
+  --color-amber-industrial: #f59e0b;
+  --color-amber-glow: #fbbf24;
+  --color-terracotta: #c2410c;
+  --color-terracotta-bright: #ea580c;
+  --color-steel-blue: #0284c7;
+  --color-hazard-yellow: #eab308;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--color-slate-950);
+  color: #e2e8f0;
+  overflow-x: hidden;
+  letter-spacing: -0.01em;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 800;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ========================================================================= */
+/* PREMIUM MIDNIGHT NAVY NAVBAR & BRAND IDENTITY (#0B1020)                   */
+/* Universal across BOTH Light Mode and Dark Mode                            */
+/* ========================================================================= */
+
+#header-sticky {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+  background-color: #0B1020 !important;
+  border-bottom: 1px solid #1E2638 !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.85) !important;
+}
+
+body {
+  padding-top: 68px !important;
+}
+
+#main-navbar,
+.navbar-midnight {
+  background-color: #0B1020 !important;
+  border-bottom: 1px solid #1E2638 !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.85) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navbar-scrolled {
+  background-color: #080C18 !important;
+  border-bottom-color: rgba(245, 160, 0, 0.35) !important;
+  box-shadow: 0 14px 35px -8px rgba(0, 0, 0, 0.95), 0 0 15px -3px rgba(245, 160, 0, 0.15) !important;
+}
+
+/* 1. Brand Identity & Logo (#FFFFFF Pure White, #F5A000 Amber) */
+.brand-title {
+  color: #FFFFFF !important;
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 1.75rem !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  transition: color 0.2s ease;
+}
+
+.group:hover .brand-title {
+  color: #F5A000 !important;
+}
+
+.brand-emblem {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 42px !important;
+  height: 42px !important;
+  background: #F5A000 !important;
+  color: #0B1020 !important;
+  border: 1px solid #FCD34D !important;
+  border-radius: 4px !important;
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 1.45rem !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.02em !important;
+  box-shadow: 0 2px 10px rgba(245, 160, 0, 0.35) !important;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease !important;
+  flex-shrink: 0 !important;
+}
+
+.group:hover .brand-emblem {
+  transform: scale(1.05) !important;
+  background: #FBBF24 !important;
+  box-shadow: 0 4px 18px rgba(245, 160, 0, 0.55) !important;
+}
+
+.badge-mfg {
+  background: #F5A000 !important;
+  color: #0B1020 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 11px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.12em !important;
+  padding: 2px 7px !important;
+  border-radius: 3px !important;
+  line-height: 1 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 4px !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+  flex-shrink: 0 !important;
+}
+
+.brand-tagline {
+  color: #D1D5DB !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 10px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  margin-top: 3px !important;
+  line-height: 1 !important;
+}
+
+/* 2. Navigation Links (Unified Single Horizontal Desktop Layout) */
+.nav-link {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 16.5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  font-weight: 700 !important;
+  padding: 0.35rem 0.65rem !important;
+  border-radius: 5px !important;
+  border: 1px solid transparent !important;
+  background-color: transparent !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  white-space: nowrap !important;
+  text-decoration: none !important;
+  line-height: 1 !important;
+  flex-shrink: 0 !important;
+}
+
+@media (min-width: 1400px) {
+  .nav-link {
+    font-size: 17.5px !important;
+    padding: 0.4rem 0.8rem !important;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .nav-link {
+    font-size: 14px !important;
+    padding: 0.3rem 0.45rem !important;
+    letter-spacing: 0.03em !important;
+  }
+}
+
+.nav-link svg,
+.nav-link i {
+  color: #94A3B8 !important;
+  transition: color 0.2s ease !important;
+}
+
+.nav-link:hover {
+  color: #F5A000 !important;
+  background-color: rgba(245, 160, 0, 0.08) !important;
+  border-color: rgba(245, 160, 0, 0.35) !important;
+}
+
+.nav-link:hover svg,
+.nav-link:hover i {
+  color: #F5A000 !important;
+}
+
+.nav-link.active {
+  color: #F5A000 !important;
+  font-weight: 700 !important;
+  background-color: rgba(245, 160, 0, 0.12) !important;
+  border-color: rgba(245, 160, 0, 0.4) !important;
+  box-shadow: 0 0 10px rgba(245, 160, 0, 0.2) !important;
+}
+
+.nav-link.active svg,
+.nav-link.active i {
+  color: #F5A000 !important;
+}
+
+.nav-link.active::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -4px !important;
+  left: 12% !important;
+  right: 12% !important;
+  height: 2.5px !important;
+  background: #F5A000 !important;
+  box-shadow: 0 0 8px #F5A000 !important;
+  border-radius: 9999px !important;
+}
+
+/* ========================================================================= */
+/* HOME 1 (UP) / HOME 2 (DOWN) VERTICALLY STACKED NAVIGATION                 */
+/* ========================================================================= */
+.nav-home-vertical {
+  display: inline-flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: stretch !important;
+  background-color: #101728 !important;
+  border: 1px solid #24314A !important;
+  border-radius: 6px !important;
+  padding: 3px !important;
+  height: 48px !important;
+  min-width: 86px !important;
+  box-sizing: border-box !important;
+  flex-shrink: 0 !important;
+  transition: border-color 0.2s ease !important;
+}
+
+.nav-home-vertical:hover {
+  border-color: rgba(245, 160, 0, 0.5) !important;
+}
+
+.nav-home-link-stacked {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 1px 8px !important;
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+  line-height: 18px !important;
+  height: 20px !important;
+  color: #FFFFFF !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  transition: all 0.15s ease !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+}
+
+.nav-home-link-stacked:hover {
+  color: #F5A000 !important;
+  background-color: rgba(245, 160, 0, 0.15) !important;
+}
+
+.nav-home-link-stacked.active {
+  color: #0B1020 !important;
+  background-color: #F5A000 !important;
+  font-weight: 900 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+}
+
+.nav-home-link-stacked.active::after {
+  display: none !important;
+}
+
+.nav-home-divider {
+  width: 100% !important;
+  height: 1px !important;
+  background-color: #24314A !important;
+  margin: 1px 0 !important;
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) {
+  .nav-home-vertical {
+    min-width: 76px !important;
+    height: 44px !important;
+    padding: 2px !important;
+  }
+  .nav-home-link-stacked {
+    font-size: 12px !important;
+    height: 18px !important;
+    line-height: 16px !important;
+    padding: 1px 6px !important;
+  }
+}
+
+html[data-theme="light"] .nav-home-vertical,
+html.theme-light .nav-home-vertical {
+  background-color: #101728 !important;
+  border-color: #24314A !important;
+}
+
+html[data-theme="light"] .nav-home-link-stacked,
+html.theme-light .nav-home-link-stacked {
+  color: #FFFFFF !important;
+}
+
+html[data-theme="light"] .nav-home-link-stacked:hover,
+html.theme-light .nav-home-link-stacked:hover {
+  color: #F5A000 !important;
+  background-color: rgba(245, 160, 0, 0.15) !important;
+}
+
+html[data-theme="light"] .nav-home-link-stacked.active,
+html.theme-light .nav-home-link-stacked.active {
+  background-color: #F5A000 !important;
+  color: #0B1020 !important;
+}
+
+/* Fallback / Mobile Segmented classes */
+.nav-home-segmented {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background-color: #101728 !important;
+  border: 1px solid #24314A !important;
+  border-radius: 6px !important;
+  padding: 2px 4px !important;
+  gap: 2px !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+  height: 36px !important;
+}
+
+.nav-home-link {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.35rem 0.6rem !important;
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  border-radius: 4px !important;
+  border: 1px solid transparent !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  line-height: 1 !important;
+  background: transparent !important;
+}
+
+.nav-home-link:hover {
+  color: #F5A000 !important;
+  background-color: rgba(245, 160, 0, 0.08) !important;
+  border-color: rgba(245, 160, 0, 0.3) !important;
+}
+
+.nav-home-link.active {
+  color: #0B1020 !important;
+  background-color: #F5A000 !important;
+  border-color: #FCD34D !important;
+  font-weight: 800 !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+}
+
+.nav-home-link.active::after {
+  display: none !important;
+}
+
+.nav-home-slash {
+  color: #D1D5DB !important;
+  font-weight: 700 !important;
+  font-size: 13px !important;
+  padding: 0 3px !important;
+  user-select: none !important;
+}
+
+/* 3. Controls: Theme Toggle & Language Toggle */
+.theme-toggle-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 38px !important;
+  height: 38px !important;
+  background-color: #131B2E !important;
+  border: 1px solid #24314A !important;
+  border-radius: 6px !important;
+  color: #F5A000 !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.2s ease !important;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #1A253D !important;
+  border-color: #F5A000 !important;
+  box-shadow: 0 0 12px rgba(245, 160, 0, 0.25) !important;
+}
+
+.theme-toggle-btn svg {
+  color: #F5A000 !important;
+  stroke: #F5A000 !important;
+}
+
+.dir-toggle-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  height: 38px !important;
+  padding: 0 0.75rem !important;
+  background-color: #131B2E !important;
+  border: 1px solid #24314A !important;
+  border-radius: 6px !important;
+  color: #FFFFFF !important;
+  cursor: pointer !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.2s ease !important;
+}
+
+.dir-toggle-btn:hover {
+  background-color: #1A253D !important;
+  border-color: #F5A000 !important;
+  box-shadow: 0 0 12px rgba(245, 160, 0, 0.25) !important;
+}
+
+.dir-toggle-btn svg {
+  color: #F5A000 !important;
+  stroke: #F5A000 !important;
+}
+
+.dir-label {
+  color: #FFFFFF !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* 4. Bulk Freight Calculator Button (#F5A000 Amber, #0B1020 Navy Text) */
+.btn-amber-freight {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  background: #F5A000 !important;
+  background-color: #F5A000 !important;
+  color: #0B1020 !important;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 14.5px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  height: 38px !important;
+  padding: 0 1.15rem !important;
+  border-radius: 5px !important;
+  border: 1px solid #FCD34D !important;
+  box-shadow: 0 3px 12px rgba(245, 160, 0, 0.4) !important;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  white-space: nowrap !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.btn-amber-freight span {
+  color: #0B1020 !important;
+  font-weight: 700 !important;
+}
+
+.btn-amber-freight svg,
+.btn-amber-freight i {
+  color: #0B1020 !important;
+  stroke: #0B1020 !important;
+}
+
+.btn-amber-freight:hover {
+  background: #FBBF24 !important;
+  background-color: #FBBF24 !important;
+  color: #060911 !important;
+  box-shadow: 0 6px 20px rgba(245, 160, 0, 0.6), 0 0 10px rgba(251, 191, 36, 0.5) !important;
+  transform: translateY(-1.5px) !important;
+}
+
+.btn-amber-freight:active {
+  transform: translateY(0) !important;
+}
+
+/* 5. Mobile Menu & Button */
+#mobile-menu-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 38px !important;
+  height: 38px !important;
+  background-color: #131B2E !important;
+  border: 1px solid #24314A !important;
+  border-radius: 6px !important;
+  color: #FFFFFF !important;
+  transition: all 0.2s ease !important;
+}
+
+#mobile-menu-btn:hover {
+  border-color: #F5A000 !important;
+  color: #F5A000 !important;
+}
+
+#mobile-menu {
+  background-color: #0B1020 !important;
+  border-top: 1px solid #1E2638 !important;
+  border-bottom: 1px solid #1E2638 !important;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.8) !important;
+}
+
+#mobile-menu .nav-link {
+  font-size: 15px !important;
+  padding: 0.65rem 0.9rem !important;
+  width: 100% !important;
+}
+
+/* Sturdy Structural Grid & Borders */
+.structural-border {
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  position: relative;
+}
+
+.structural-border::before,
+.structural-border::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-color: var(--color-amber-industrial);
+  pointer-events: none;
+}
+
+.structural-border::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--color-amber-industrial);
+  border-left: 2px solid var(--color-amber-industrial);
+}
+
+.structural-border::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--color-amber-industrial);
+  border-right: 2px solid var(--color-amber-industrial);
+}
+
+/* Heavy Industrial Corner Rivets */
+.industrial-rivet {
+  position: relative;
+}
+.industrial-rivet::before {
+  content: '✚';
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  font-size: 8px;
+  color: #475569;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* Hazard Warning Strip */
+.hazard-stripe {
+  background: repeating-linear-gradient(
+    -45deg,
+    #f59e0b,
+    #f59e0b 12px,
+    #0f141e 12px,
+    #0f141e 24px
+  );
+}
+
+.hazard-stripe-thin {
+  height: 4px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #f59e0b,
+    #f59e0b 8px,
+    #1b2230 8px,
+    #1b2230 16px
+  );
+}
+
+/* Concrete Texture Background */
+.bg-concrete-pattern {
+  background-color: #0a0e18;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+                    radial-gradient(rgba(245, 158, 11, 0.02) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+.bg-concrete-panel {
+  background: linear-gradient(180deg, #131926 0%, #0c121d 100%);
+  border: 1px solid #1f293d;
+}
+
+.bg-concrete-card {
+  background: #101624;
+  border: 1px solid #222d42;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bg-concrete-card:hover {
+  border-color: #f59e0b;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 0 18px -3px rgba(245, 158, 11, 0.2);
+}
+
+/* Steel Metric Badge */
+.metric-badge {
+  background: #080c16;
+  border: 1px solid #202b3d;
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* Compressive Strength Indicator Bar */
+.strength-bar-bg {
+  background: #1e293b;
+  height: 8px;
+  border-radius: 1px;
+  overflow: hidden;
+}
+.strength-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6 0%, #f59e0b 70%, #ef4444 100%);
+  transition: width 0.5s ease-out;
+}
+
+/* Quality & Technology Laboratory Cards */
+.quality-card {
+  background: #0d1322;
+  border: 1px solid #1f2a3f;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+}
+
+.quality-card:hover {
+  border-color: #f59e0b;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px -8px rgba(0, 0, 0, 0.7), 0 0 20px -5px rgba(245, 158, 11, 0.25);
+}
+
+.quality-card-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background-color: #060911;
+}
+
+.quality-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.quality-card:hover .quality-card-media img {
+  transform: scale(1.04);
+}
+
+/* Hydraulic Testing Rig Animations */
+.piston-shaft {
+  transition: transform 0.1s linear;
+}
+
+.crush-stress-fracture {
+  animation: jitter 0.08s infinite alternate;
+}
+
+@keyframes jitter {
+  0% { transform: translate(1px, 0); }
+  50% { transform: translate(-1px, 1px); }
+  100% { transform: translate(0, -1px); }
+}
+
+/* Blueprint Line Drawing Styling */
+.blueprint-card {
+  background: #091322;
+  border: 1px solid #1e3a5f;
+  background-image: 
+    linear-gradient(rgba(30, 58, 95, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 58, 95, 0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #080c16;
+}
+::-webkit-scrollbar-thumb {
+  background: #27354a;
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* ========================================================================= */
+/* ARCHITECTURAL SECTIONS & CARDS (THEME ADAPTIVE: DARK DEFAULT)             */
+/* ========================================================================= */
+
+.section-light-concrete {
+  background-color: #080D1A;
+  color: #CBD5E1;
+  position: relative;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section-light-concrete h2,
+.section-light-concrete h3,
+.section-light-concrete h4 {
+  color: #FFFFFF;
+}
+
+.section-light-concrete p {
+  color: #94A3B8;
+}
+
+.card-light-concrete {
+  background-color: #101728;
+  border: 1px solid #24314A;
+  border-radius: 6px;
+  box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.5), 0 2px 6px -2px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-light-concrete:hover {
+  border-color: #f59e0b;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 25px -5px rgba(0, 0, 0, 0.8), 0 0 15px -3px rgba(245, 158, 11, 0.25);
+}
+
+.card-light-concrete h4,
+.card-light-concrete h3 {
+  color: #FFFFFF;
+}
+
+.card-light-concrete p {
+  color: #94A3B8;
+}
+
+/* Architectural Product Specification Card */
+.architectural-product-card {
+  background: #0d1322;
+  border: 1px solid #1f2b40;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.architectural-product-card:hover {
+  border-color: #f59e0b;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.8), 0 0 20px -4px rgba(245, 158, 11, 0.22);
+}
+
+.size-pill {
+  display: inline-block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 3px;
+  background-color: #090e1a;
+  border: 1px solid #243147;
+  color: #94a3b8;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.size-pill.current {
+  background-color: rgba(245, 158, 11, 0.15);
+  border-color: #f59e0b;
+  color: #fbbf24;
+}
+
+/* Tab active button */
+.nav-tab-btn.active {
+  background-color: #f59e0b;
+  color: #0b0f17;
+  font-weight: 700;
+  border-color: #f59e0b;
+}
+
+/* Table dense styling */
+.tech-table th {
+  background-color: #0c1220;
+  color: #94a3b8;
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+}
+.tech-table tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.015);
+}
+.tech-table tr:hover {
+  background-color: rgba(245, 158, 11, 0.04);
+}
+
+/* Print Styles for Spec Sheet and Quotations */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  nav, footer, .no-print {
+    display: none !important;
+  }
+  .modal-container {
+    position: static !important;
+    box-shadow: none !important;
+  }
+}
+
+/* ========================================================================= */
+/* THEME CONTROLS & RTL BUTTONS                                              */
+/* ========================================================================= */
+
+.theme-toggle-btn, .dir-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.65rem;
+  background-color: #131B2E !important;
+  border: 1px solid #24314A !important;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover, .dir-toggle-btn:hover {
+  border-color: #F5A000 !important;
+}
+
+/* LTR AND RTL DUAL SEGMENTED CONTROLS */
+.dir-toggle-group {
+  background-color: #131B2E !important;
+  border: 1px solid #24314A !important;
+  border-radius: 6px;
+  padding: 2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.dir-btn {
+  border: none;
+  background: transparent;
+  color: #E5E7EB;
+  padding: 4px 9px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  line-height: 1;
+}
+
+.dir-btn:hover {
+  color: #F5A000;
+  background-color: rgba(245, 160, 0, 0.1);
+}
+
+.dir-btn.active {
+  background-color: #F5A000 !important;
+  color: #0B1020 !important;
+  font-weight: 900 !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.dir-btn.active svg {
+  stroke: #0B1020 !important;
+}
+
+.dir-btn svg {
+  stroke: #F5A000;
+  transition: stroke 0.2s ease;
+}
+
+/* Mobile Segmented Direction Controls */
+.mobile-dir-btn-ltr,
+.mobile-dir-btn-rtl {
+  background-color: transparent;
+  color: #E5E7EB;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.mobile-dir-btn-ltr:hover,
+.mobile-dir-btn-rtl:hover {
+  color: #F5A000;
+}
+
+.mobile-dir-btn-ltr.active,
+.mobile-dir-btn-rtl.active {
+  background-color: #F5A000 !important;
+  color: #0B1020 !important;
+  font-weight: 900 !important;
+}
+/* ========================================================================= */
+/* DARK MODE COMPLETE ENGINE (HIGH CONTRAST LUXURY INDUSTRIAL)               */
+/* ========================================================================= */
+
+html[data-theme="dark"],
+html.dark,
+html:not(.theme-light) {
+  --color-slate-950: #060911;
+  --color-navy-midnight: #0B1020;
+  --color-navy-deep: #070b16;
+  --color-slate-900: #0f141e;
+  --color-slate-800: #1b2230;
+  --color-slate-700: #2c364c;
+  --color-slate-600: #475569;
+  --color-concrete: #cbd5e1;
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] body,
+html.dark body,
+html:not(.theme-light) body {
+  background-color: #060911 !important;
+  color: #CBD5E1 !important;
+}
+
+html[data-theme="dark"] .section-light-concrete,
+html.dark .section-light-concrete,
+html:not(.theme-light) .section-light-concrete {
+  background-color: #080D1A !important;
+  color: #CBD5E1 !important;
+  border-bottom-color: #1E2638 !important;
+}
+
+html[data-theme="dark"] .section-light-concrete h2,
+html[data-theme="dark"] .section-light-concrete h3,
+html[data-theme="dark"] .section-light-concrete h4,
+html.dark .section-light-concrete h2,
+html.dark .section-light-concrete h3,
+html.dark .section-light-concrete h4,
+html:not(.theme-light) .section-light-concrete h2,
+html:not(.theme-light) .section-light-concrete h3,
+html:not(.theme-light) .section-light-concrete h4 {
+  color: #FFFFFF !important;
+}
+
+html[data-theme="dark"] .section-light-concrete p,
+html.dark .section-light-concrete p,
+html:not(.theme-light) .section-light-concrete p {
+  color: #94A3B8 !important;
+}
+
+html[data-theme="dark"] .card-light-concrete,
+html.dark .card-light-concrete,
+html:not(.theme-light) .card-light-concrete {
+  background-color: #101728 !important;
+  border: 1px solid #24314A !important;
+  color: #CBD5E1 !important;
+  box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.6) !important;
+}
+
+html[data-theme="dark"] .card-light-concrete:hover,
+html.dark .card-light-concrete:hover,
+html:not(.theme-light) .card-light-concrete:hover {
+  border-color: #F5A000 !important;
+  box-shadow: 0 14px 25px -5px rgba(0, 0, 0, 0.8), 0 0 15px -3px rgba(245, 158, 11, 0.25) !important;
+}
+
+html[data-theme="dark"] .card-light-concrete h4,
+html[data-theme="dark"] .card-light-concrete h3,
+html.dark .card-light-concrete h4,
+html.dark .card-light-concrete h3,
+html:not(.theme-light) .card-light-concrete h4,
+html:not(.theme-light) .card-light-concrete h3 {
+  color: #FFFFFF !important;
+}
+
+html[data-theme="dark"] .card-light-concrete p,
+html.dark .card-light-concrete p,
+html:not(.theme-light) .card-light-concrete p {
+  color: #94A3B8 !important;
+}
+
+html[data-theme="dark"] #mockup-studio,
+html.dark #mockup-studio,
+html:not(.theme-light) #mockup-studio {
+  background-color: #101728 !important;
+  border-color: #24314A !important;
+  color: #FFFFFF !important;
+}
+
+html[data-theme="dark"] .bg-white,
+html.dark .bg-white,
+html:not(.theme-light) .bg-white {
+  background-color: #101728 !important;
+  color: #CBD5E1 !important;
+  border-color: #24314A !important;
+}
+
+html[data-theme="dark"] .text-slate-900,
+html.dark .text-slate-900,
+html:not(.theme-light) .text-slate-900 {
+  color: #FFFFFF !important;
+}
+
+html[data-theme="dark"] .text-slate-800,
+html.dark .text-slate-800,
+html:not(.theme-light) .text-slate-800 {
+  color: #E2E8F0 !important;
+}
+
+html[data-theme="dark"] .text-slate-700,
+html.dark .text-slate-700,
+html:not(.theme-light) .text-slate-700 {
+  color: #CBD5E1 !important;
+}
+
+html[data-theme="dark"] .text-slate-600,
+html.dark .text-slate-600,
+html:not(.theme-light) .text-slate-600 {
+  color: #94A3B8 !important;
+}
+
+html[data-theme="dark"] .border-slate-200,
+html.dark .border-slate-200,
+html:not(.theme-light) .border-slate-200 {
+  border-color: #1E2638 !important;
+}
+
+html[data-theme="dark"] .border-slate-300,
+html.dark .border-slate-300,
+html:not(.theme-light) .border-slate-300 {
+  border-color: #24314A !important;
+}
+
+html[data-theme="dark"] .bg-slate-50,
+html.dark .bg-slate-50,
+html:not(.theme-light) .bg-slate-50 {
+  background-color: #0D1322 !important;
+  color: #CBD5E1 !important;
+}
+
+html[data-theme="dark"] .bg-slate-100,
+html.dark .bg-slate-100,
+html:not(.theme-light) .bg-slate-100 {
+  background-color: #131B2E !important;
+  color: #CBD5E1 !important;
+}
+
+/* ========================================================================= */
+/* LIGHT THEME (ARCHITECTURAL CRISP CONCRETE & BRIGHT WHITE)                */
+/* NOTE: Navbar remains MIDNIGHT NAVY (#0B1020) per brand architecture       */
+/* ========================================================================= */
+
+html[data-theme="light"],
+html.theme-light {
+  --color-slate-950: #f8fafc;
+  --color-navy-midnight: #0B1020; /* GUARANTEED MIDNIGHT NAVY FOR NAVBAR */
+  --color-navy-deep: #f1f5f9;
+  --color-slate-900: #ffffff;
+  --color-slate-800: #e2e8f0;
+  --color-slate-700: #cbd5e1;
+  --color-slate-600: #64748b;
+  color-scheme: light;
+}
+
+html[data-theme="light"] body,
+html.theme-light body {
+  background-color: #f8fafc !important;
+  color: #1e293b !important;
+}
+
+/* Light Theme: Section & Card Overrides */
+html[data-theme="light"] .section-light-concrete,
+html.theme-light .section-light-concrete {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border-bottom-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] .section-light-concrete h2,
+html[data-theme="light"] .section-light-concrete h3,
+html[data-theme="light"] .section-light-concrete h4,
+html.theme-light .section-light-concrete h2,
+html.theme-light .section-light-concrete h3,
+html.theme-light .section-light-concrete h4 {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .section-light-concrete p,
+html.theme-light .section-light-concrete p {
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .card-light-concrete,
+html.theme-light .card-light-concrete {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.05), 0 2px 6px -2px rgba(0, 0, 0, 0.03) !important;
+}
+
+html[data-theme="light"] .card-light-concrete h4,
+html[data-theme="light"] .card-light-concrete h3,
+html.theme-light .card-light-concrete h4,
+html.theme-light .card-light-concrete h3 {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .card-light-concrete p,
+html.theme-light .card-light-concrete p {
+  color: #475569 !important;
+}
+
+/* Light Theme: GUARANTEE Midnight Navy Navbar (#0B1020) & Uncompromised Contrast */
+html[data-theme="light"] #header-sticky,
+html[data-theme="light"] #main-navbar,
+html[data-theme="light"] .navbar-midnight,
+html[data-theme="light"] #mobile-menu,
+html.theme-light #header-sticky,
+html.theme-light #main-navbar,
+html.theme-light .navbar-midnight,
+html.theme-light #mobile-menu {
+  background-color: #0B1020 !important;
+  border-bottom: 1px solid #1E2638 !important;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.85) !important;
+}
+
+html[data-theme="light"] .brand-title,
+html.theme-light .brand-title {
+  color: #FFFFFF !important;
+}
+
+html[data-theme="light"] .brand-emblem,
+html.theme-light .brand-emblem {
+  background: #F5A000 !important;
+  color: #0B1020 !important;
+  border-color: #FCD34D !important;
+}
+
+html[data-theme="light"] .badge-mfg,
+html.theme-light .badge-mfg {
+  background: #F5A000 !important;
+  color: #0B1020 !important;
+}
+
+html[data-theme="light"] .brand-tagline,
+html.theme-light .brand-tagline {
+  color: #AAB4C5 !important;
+}
+
+html[data-theme="light"] #header-sticky .nav-link,
+html[data-theme="light"] #main-navbar .nav-link,
+html[data-theme="light"] #mobile-menu .nav-link,
+html.theme-light #header-sticky .nav-link,
+html.theme-light #main-navbar .nav-link,
+html.theme-light #mobile-menu .nav-link {
+  color: #E5E7EB !important;
+}
+
+html[data-theme="light"] #header-sticky .nav-link:hover,
+html[data-theme="light"] #main-navbar .nav-link:hover,
+html[data-theme="light"] #mobile-menu .nav-link:hover,
+html.theme-light #header-sticky .nav-link:hover,
+html.theme-light #main-navbar .nav-link:hover,
+html.theme-light #mobile-menu .nav-link:hover {
+  color: #F5A000 !important;
+  background-color: rgba(245, 160, 0, 0.1) !important;
+  border-color: rgba(245, 160, 0, 0.35) !important;
+}
+
+html[data-theme="light"] #header-sticky .nav-link.active,
+html[data-theme="light"] #main-navbar .nav-link.active,
+html[data-theme="light"] #mobile-menu .nav-link.active,
+html.theme-light #header-sticky .nav-link.active,
+html.theme-light #main-navbar .nav-link.active,
+html.theme-light #mobile-menu .nav-link.active {
+  color: #F5A000 !important;
+  background-color: rgba(245, 160, 0, 0.16) !important;
+  border-color: rgba(245, 160, 0, 0.5) !important;
+}
+
+html[data-theme="light"] .theme-toggle-btn,
+html[data-theme="light"] .dir-toggle-btn,
+html[data-theme="light"] #mobile-menu-btn,
+html.theme-light .theme-toggle-btn,
+html.theme-light .dir-toggle-btn,
+html.theme-light #mobile-menu-btn {
+  background-color: #131B2E !important;
+  border-color: #24314A !important;
+  color: #FFFFFF !important;
+}
+
+html[data-theme="light"] .theme-toggle-btn svg,
+html[data-theme="light"] .dir-toggle-btn svg,
+html.theme-light .theme-toggle-btn svg,
+html.theme-light .dir-toggle-btn svg {
+  color: #F5A000 !important;
+  stroke: #F5A000 !important;
+}
+
+html[data-theme="light"] .dir-label,
+html.theme-light .dir-label {
+  color: #FFFFFF !important;
+}
+
+html[data-theme="light"] .btn-amber-freight,
+html.theme-light .btn-amber-freight {
+  background: #F5A000 !important;
+  background-color: #F5A000 !important;
+  color: #0B1020 !important;
+  border-color: #FCD34D !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+html[data-theme="light"] .btn-amber-freight span,
+html.theme-light .btn-amber-freight span {
+  color: #0B1020 !important;
+  font-weight: 700 !important;
+}
+
+html[data-theme="light"] .btn-amber-freight svg,
+html[data-theme="light"] .btn-amber-freight i,
+html.theme-light .btn-amber-freight svg,
+html.theme-light .btn-amber-freight i {
+  color: #0B1020 !important;
+  stroke: #0B1020 !important;
+}
+
+/* Light Theme Card Overrides */
+html[data-theme="light"] .architectural-product-card,
+html.theme-light .architectural-product-card {
+  background: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.06) !important;
+}
+
+html[data-theme="light"] .architectural-product-card h3,
+html.theme-light .architectural-product-card h3 {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .size-pill,
+html.theme-light .size-pill {
+  background-color: #f8fafc !important;
+  border-color: #cbd5e1 !important;
+  color: #475569 !important;
+}
+
+html[data-theme="light"] .size-pill.current,
+html.theme-light .size-pill.current {
+  background-color: rgba(245, 158, 11, 0.15) !important;
+  border-color: #d97706 !important;
+  color: #b45309 !important;
+}
+
+/* Light Theme Tables */
+html[data-theme="light"] .tech-table th,
+html.theme-light .tech-table th {
+  background-color: #0f172a !important;
+  color: #f1f5f9 !important;
+}
+
+html[data-theme="light"] .tech-table td,
+html.theme-light .tech-table td {
+  border-bottom-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] #master-spec-index-table tbody tr,
+html.theme-light #master-spec-index-table tbody tr {
+  background-color: #ffffff;
+}
+
+html[data-theme="light"] #master-spec-index-table tbody tr:nth-child(even),
+html.theme-light #master-spec-index-table tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+html[data-theme="light"] #master-spec-index-table tbody tr:hover,
+html.theme-light #master-spec-index-table tbody tr:hover {
+  background-color: rgba(245, 158, 11, 0.08) !important;
+}
+
+/* Light Theme Blog Cards */
+html[data-theme="light"] .blog-card,
+html.theme-light .blog-card {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 6px 20px -4px rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] .blog-card h3 button,
+html.theme-light .blog-card h3 button {
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .blog-card p,
+html.theme-light .blog-card p {
+  color: #475569 !important;
+}
+
+/* Light Theme Inputs */
+html[data-theme="light"] input[type="text"],
+html[data-theme="light"] input[type="number"],
+html[data-theme="light"] select,
+html[data-theme="light"] textarea,
+html.theme-light input[type="text"],
+html.theme-light input[type="number"],
+html.theme-light select,
+html.theme-light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html[data-theme="light"] input::placeholder,
+html.theme-light input::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* ========================================================================= */
+/* RTL (RIGHT-TO-LEFT) & LTR (LEFT-TO-RIGHT) COMPLETE DIRECTION ENGINE       */
+/* ========================================================================= */
+
+[dir="rtl"],
+html[dir="rtl"],
+html[dir="rtl"] body {
+  direction: rtl !important;
+  text-align: right !important;
+  unicode-bidi: embed;
+}
+
+[dir="ltr"],
+html[dir="ltr"],
+html[dir="ltr"] body {
+  direction: ltr !important;
+  text-align: left !important;
+}
+
+/* Comprehensive Text Alignments in RTL */
+[dir="rtl"] .text-left,
+[dir="rtl"] .text-start,
+[dir="rtl"] .sm\:text-left,
+[dir="rtl"] .md\:text-left,
+[dir="rtl"] .lg\:text-left {
+  text-align: right !important;
+}
+
+[dir="rtl"] .text-right,
+[dir="rtl"] .text-end,
+[dir="rtl"] .sm\:text-right,
+[dir="rtl"] .md\:text-right,
+[dir="rtl"] .lg\:text-right {
+  text-align: left !important;
+}
+
+/* Form Fields & Controls in RTL */
+[dir="rtl"] input[type="text"],
+[dir="rtl"] input[type="email"],
+[dir="rtl"] input[type="number"],
+[dir="rtl"] input[type="tel"],
+[dir="rtl"] select,
+[dir="rtl"] textarea {
+  direction: rtl !important;
+  text-align: right !important;
+}
+
+/* Search inputs with internal icons in RTL */
+[dir="rtl"] #products-search-input,
+[dir="rtl"] #index-search-input,
+[dir="rtl"] #blog-search-input {
+  padding-left: 2.25rem !important;
+  padding-right: 0.75rem !important;
+  text-align: right !important;
+}
+
+[dir="rtl"] #products-search-input + i,
+[dir="rtl"] #products-search-input ~ i,
+[dir="rtl"] #index-search-input + i,
+[dir="rtl"] #index-search-input ~ i,
+[dir="rtl"] #blog-search-input + i,
+[dir="rtl"] #blog-search-input ~ i,
+[dir="rtl"] .search-icon-wrapper {
+  right: auto !important;
+  left: 0.65rem !important;
+}
+
+/* Flipped Directional Icons */
+[dir="rtl"] [data-lucide="arrow-right"],
+[dir="rtl"] [data-lucide="chevron-right"],
+[dir="rtl"] [data-lucide="move-right"],
+[dir="rtl"] [data-lucide="arrow-up-right"],
+[dir="rtl"] [data-lucide="send"] {
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] [data-lucide="arrow-left"],
+[dir="rtl"] [data-lucide="chevron-left"],
+[dir="rtl"] [data-lucide="move-left"] {
+  transform: scaleX(-1);
+}
+
+/* Card Accent Borders Flipped for RTL */
+[dir="rtl"] .border-l-4 {
+  border-left-width: 0 !important;
+  border-right-width: 4px !important;
+}
+
+[dir="rtl"] .border-l-2 {
+  border-left-width: 0 !important;
+  border-right-width: 2px !important;
+}
+
+[dir="rtl"] .border-l {
+  border-left-width: 0 !important;
+  border-right-width: 1px !important;
+}
+
+[dir="rtl"] .border-r-4 {
+  border-right-width: 0 !important;
+  border-left-width: 4px !important;
+}
+
+[dir="rtl"] .border-r-2 {
+  border-right-width: 0 !important;
+  border-left-width: 2px !important;
+}
+
+/* RTL Toast Container Position */
+[dir="rtl"] #industrial-toast-container {
+  right: auto !important;
+  left: 1.25rem !important;
+}
+
+/* RTL Navigation Alignment */
+[dir="rtl"] #header-sticky {
+  direction: rtl;
+}
+
+[dir="rtl"] .brand-emblem {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .btn-amber-freight i {
+  margin-left: 0.35rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] #mobile-menu {
+  direction: rtl;
+  text-align: right;
+}
+
+[dir="rtl"] #mobile-menu .nav-link {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+/* RTL Tables & Specification Matrix */
+[dir="rtl"] .tech-table {
+  direction: rtl;
+}
+
+[dir="rtl"] .tech-table th,
+[dir="rtl"] .tech-table td {
+  text-align: right;
+}
+
+[dir="rtl"] .tech-table th.text-right,
+[dir="rtl"] .tech-table td.text-right,
+[dir="rtl"] .tech-table th:last-child,
+[dir="rtl"] .tech-table td:last-child {
+  text-align: left !important;
+}
+
+/* Modal Close Buttons in RTL */
+[dir="rtl"] #tds-modal button[onclick*="closeTdsModal"],
+[dir="rtl"] #blog-modal button[onclick*="closeBlogModal"] {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+
+
