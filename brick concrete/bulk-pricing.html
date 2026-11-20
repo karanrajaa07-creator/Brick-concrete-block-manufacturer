@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wholesale Bulk Pricing & Material Calculator | Titan Brick & Concrete</title>
+  <meta name="description" content="View commercial wholesale pricing tables, volume discounts, minimum order quantities, delivery rates, and calculate your project requirements with our bulk estimator.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brick-red': '#b83a24',
+            'brick-red-hover': '#9c2e1b',
+            'industrial-orange': '#ea580c',
+            'charcoal-950': '#0a0b0d',
+            'charcoal-900': '#121316',
+            'charcoal-800': '#1e2126',
+            'charcoal-700': '#2b2f36',
+            'concrete-100': '#f1f3f6',
+            'concrete-200': '#dce0e6',
+            'concrete-400': '#8c939d',
+            'concrete-500': '#626974',
+          },
+          fontFamily: {
+            heading: ['Barlow Condensed', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome Free Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Industrial Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-warm-white text-gray-800 antialiased flex flex-col min-h-screen">
+
+  <!-- ================= STICKY HEADER & NAVBAR ================= -->
+  <header class="site-header">
+    <div class="navbar-wrapper">
+      <div class="navbar-container">
+        
+        <!-- Brand Logo (Far Left, Fixed Width, Vertically Centered, No Wrap) -->
+        <a href="index.html" class="navbar-brand">
+          <div class="navbar-logo-icon">
+            <i class="fa-solid fa-cubes-stacked"></i>
+          </div>
+          <div class="navbar-brand-text">
+            <div class="navbar-brand-title-wrap">
+              <span class="nav-brand-title">TITAN</span>
+              <span class="nav-brand-accent">BRICK</span>
+            </div>
+            <div class="navbar-tagline">
+              Heavy Industry • Concrete Works
+            </div>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links (Center, Flexible, Single Line, No Wrap) -->
+        <nav class="navbar-nav">
+          
+          <!-- 1. Home Dropdown -->
+          <div class="nav-item-dropdown">
+            <button class="nav-link-item ">
+              <span>Home</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="nav-dropdown">
+              <a href="index.html" class="block px-4 py-2.5 text-xs  flex items-center justify-between">
+                <span>Home 1 – Industrial Premium</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+              <a href="home-2.html" class="block px-4 py-2.5 text-xs  flex items-center justify-between">
+                <span>Home 2 – Modern Materials</span>
+                <i class="fa-solid fa-arrow-right text-[10px]"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 2. About Us -->
+          <a href="about.html" class="nav-link-item ">
+            About Us
+          </a>
+
+          <!-- 3. Products Dropdown -->
+          <div class="nav-item-dropdown">
+            <a href="products.html" class="nav-link-item ">
+              <span>Products</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <div class="nav-dropdown w-64">
+              <a href="products.html" class="block px-4 py-2 text-xs font-bold border-b border-charcoal-700">
+                <i class="fa-solid fa-border-all mr-2 text-brick-red"></i> View Complete Catalogue (15)
+              </a>
+              <a href="products.html?category=solid-concrete" class="block px-4 py-2 text-xs">Solid Concrete Blocks</a>
+              <a href="products.html?category=hollow-concrete" class="block px-4 py-2 text-xs">Hollow Concrete Blocks</a>
+              <a href="products.html?category=aac-blocks" class="block px-4 py-2 text-xs">AAC Lightweight Blocks</a>
+              <a href="products.html?category=fly-ash-bricks" class="block px-4 py-2 text-xs">Fly Ash Bricks</a>
+              <a href="products.html?category=red-clay-bricks" class="block px-4 py-2 text-xs">Red Clay Kiln Bricks</a>
+              <a href="products.html?category=paver-blocks" class="block px-4 py-2 text-xs">Heavy-Duty Paver Blocks</a>
+              <a href="products.html?category=custom-size" class="block px-4 py-2 text-xs">Custom Precast & Metric Blocks</a>
+            </div>
+          </div>
+
+          <!-- 4. Services Dropdown -->
+          <div class="nav-item-dropdown">
+            <a href="services.html" class="nav-link-item ">
+              <span>Services</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </a>
+            <div class="nav-dropdown w-60">
+              <a href="services.html" class="block px-4 py-2 text-xs font-bold border-b border-charcoal-700">
+                <i class="fa-solid fa-gears mr-2 text-orange-500"></i> All Industrial Services
+              </a>
+              <a href="services.html#brick-manufacturing" class="block px-4 py-2 text-xs">Brick Manufacturing</a>
+              <a href="services.html#concrete-manufacturing" class="block px-4 py-2 text-xs">Concrete Block Casting</a>
+              <a href="services.html#custom-molding" class="block px-4 py-2 text-xs">Custom Block Production</a>
+              <a href="services.html#bulk-supply" class="block px-4 py-2 text-xs">Bulk Material Supply</a>
+              <a href="services.html#quality-testing" class="block px-4 py-2 text-xs">Certified Lab Testing</a>
+            </div>
+          </div>
+
+          <!-- 5. Bulk Pricing -->
+          <a href="bulk-pricing.html" class="nav-link-item active-nav text-brick-red">
+            Bulk Pricing
+          </a>
+
+          <!-- 6. Delivery -->
+          <a href="delivery.html" class="nav-link-item ">
+            Delivery
+          </a>
+
+          <!-- 7. Blog -->
+          <a href="blog.html" class="nav-link-item ">
+            Blog
+          </a>
+
+          <!-- 8. Contact Us -->
+          <a href="contact.html" class="nav-link-item ">
+            Contact Us
+          </a>
+        </nav>
+
+        <!-- Right Side Controls & Quote CTA (Far Right, Fixed Width, Never Cut Off) -->
+        <div class="navbar-actions">
+          
+          <!-- Direction Switcher (LTR / RTL) -->
+          <div class="navbar-dir-switch" role="group" aria-label="Layout Direction">
+            <button type="button" class="dir-opt-btn active" data-dir="ltr" title="Left-to-Right layout">LTR</button>
+            <button type="button" class="dir-opt-btn" data-dir="rtl" title="Right-to-Left layout">RTL</button>
+          </div>
+
+          <!-- Theme Switcher (Dark / Light) -->
+          <div class="navbar-theme-switch" role="group" aria-label="Theme Selection">
+            <button type="button" class="theme-opt-btn active" data-theme="dark" title="Dark Mode">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+            <button type="button" class="theme-opt-btn" data-theme="light" title="Light Mode">
+              <i class="fa-solid fa-sun"></i>
+            </button>
+          </div>
+
+          <!-- Get a Quote CTA Button (Never Clipped) -->
+          <button data-open-quote class="navbar-quote-btn">
+            <i class="fa-solid fa-calculator"></i>
+            <span>Get a Quote</span>
+          </button>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button id="mobile-menu-toggle" class="navbar-hamburger-btn" aria-label="Open Navigation Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MOBILE OFF-CANVAS DRAWER ================= -->
+  <div id="mobile-overlay" class="fixed inset-0 bg-black/70 z-50 hidden opacity-0 transition-opacity duration-300 backdrop-blur-sm"></div>
+  <aside id="mobile-drawer" class="fixed top-0 right-0 w-80 max-w-full h-full bg-charcoal-900 z-50 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between border-l border-charcoal-700">
+    <div class="p-6 overflow-y-auto">
+      <div class="flex items-center justify-between pb-6 border-b border-charcoal-800">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 bg-brick-red rounded flex items-center justify-center text-white text-lg font-bold">
+            <i class="fa-solid fa-cubes-stacked"></i>
+          </div>
+          <div>
+            <span class="font-heading font-extrabold text-xl nav-brand-title tracking-wider">TITAN</span>
+            <span class="font-heading font-extrabold text-xl text-brick-red tracking-wider ml-1">BRICK</span>
+          </div>
+        </div>
+        <button id="mobile-menu-close" class="text-gray-400 hover:text-white text-xl p-1" aria-label="Close Mobile Menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <nav class="mt-6 space-y-1">
+        <a href="index.html" class="block px-3 py-2.5 rounded font-heading text-base font-semibold text-gray-200 hover:bg-charcoal-800 hover:text-white">
+          Home 1 – Industrial Premium
+        </a>
+        <a href="home-2.html" class="block px-3 py-2.5 rounded font-heading text-base font-semibold text-gray-200 hover:bg-charcoal-800 hover:text-white">
+          Home 2 – Modern Materials
+        </a>
+        <a href="about.html" class="block px-3 py-2.5 rounded font-heading text-base font-semibold text-gray-200 hover:bg-charcoal-800 hover:text-white">
+          About Us
+        </a>
+        <a href="products.html" class="block px-3 py-2.5 rounded font-heading text-base font-semibold text-gray-200 hover:bg-charcoal-800 hover:text-white">
+          Products Catalogue (15)
+        </a>
+        <a href="services.html" class="block px-3 py-2.5 rounded font-heading text-base font-semibold text-gray-200 hover:bg-charcoal-800 hover:text-white">
+          Manufacturing Services
+        </a>
+        <a href="bulk-pricing.html" class="block px-3 py-2.5 rounded font-heading text-base font-semibold text-brick-red bg-charcoal-800">
+          Bulk Pricing & Calculator
+        </a>
+        <a href="delivery.html" class="block px-3 py-2.5 rounded font-heading text-base font-semibold text-gray-200 hover:bg-charcoal-800 hover:text-white">
+          Delivery Fleet Logistics
+        </a>
+        <a href="blog.html" class="block px-3 py-2.5 rounded font-heading text-base font-semibold text-gray-200 hover:bg-charcoal-800 hover:text-white">
+          Technical Articles & Blog
+        </a>
+        <a href="contact.html" class="block px-3 py-2.5 rounded font-heading text-base font-semibold text-gray-200 hover:bg-charcoal-800 hover:text-white">
+          Contact Us & Facilities
+        </a>
+      </nav>
+
+      <div class="mt-8 pt-6 border-t border-charcoal-800 space-y-3">
+        <!-- Mobile Preferences: LTR/RTL and Dark/Light -->
+        <div class="space-y-2">
+          <div class="text-[10px] font-mono uppercase tracking-widest text-concrete-500">Preferences</div>
+          <div class="flex items-center justify-between bg-charcoal-800/80 p-2.5 rounded border border-charcoal-700">
+            <span class="text-xs font-mono text-gray-300">Layout Direction:</span>
+            <div class="navbar-dir-switch">
+              <button type="button" class="dir-opt-btn active" data-dir="ltr">LTR</button>
+              <button type="button" class="dir-opt-btn" data-dir="rtl">RTL</button>
+            </div>
+          </div>
+          <div class="flex items-center justify-between bg-charcoal-800/80 p-2.5 rounded border border-charcoal-700">
+            <span class="text-xs font-mono text-gray-300">Theme Mode:</span>
+            <div class="navbar-theme-switch">
+              <button type="button" class="theme-opt-btn active" data-theme="dark" title="Dark Mode">
+                <i class="fa-solid fa-moon"></i>
+              </button>
+              <button type="button" class="theme-opt-btn" data-theme="light" title="Light Mode">
+                <i class="fa-solid fa-sun"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <button data-open-quote class="btn-brick w-full text-center text-sm py-3 mt-4 flex items-center justify-center gap-2">
+          <i class="fa-solid fa-calculator"></i>
+          <span>Request Bulk Quotation</span>
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= BULK PRICING HERO BANNER ================= -->
+  <section class="hero-banner dark-surface bg-charcoal-900 text-white py-16 border-b border-charcoal-800 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded bg-brick-red/20 border border-brick-red/50 text-brick-red font-mono text-xs uppercase tracking-wider mb-4">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <span>Commercial Transparency & Tiered Discounting</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-white leading-tight mb-4">
+          Wholesale Bulk Pricing & Estimator
+        </h1>
+        <p class="text-concrete-300 text-base leading-relaxed">
+          Review our wholesale volume tiers, realistic unit estimates, minimum order thresholds, and use the interactive material calculator to compute exact job requirements.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TIERED VOLUME DISCOUNT CARDS ================= -->
+  <section class="py-16 bg-warm-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="text-brick-red font-mono text-xs uppercase tracking-widest font-bold">Volume Advantage</span>
+        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-gray-900 mt-1">
+          Contractor Wholesale Volume Tiers
+        </h2>
+        <p class="text-gray-600 text-sm mt-2">
+          Pricing scales automatically with order scale. Registered general contractors unlock dedicated staging yards and Net-30 invoicing terms.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Tier 1 -->
+        <div class="bg-white rounded-lg border border-gray-200 p-8 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="font-mono text-xs text-gray-500 uppercase font-semibold">Tier 1: Commercial Base</div>
+            <h3 class="text-2xl font-heading font-bold text-gray-900 mt-1 mb-2">1 - 5 Full Truckloads</h3>
+            <div class="text-3xl font-heading font-extrabold text-gray-800 mb-4">Standard Wholesale</div>
+            <p class="text-gray-600 text-xs mb-6 leading-relaxed">
+              Ideal for single-story retail stores, small foundations, and residential developments.
+            </p>
+            <ul class="space-y-2.5 text-xs text-gray-700 font-mono mb-8 border-t border-gray-100 pt-4">
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> MOQ: 1 Flatbed (600 - 1,200 Blocks)</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Standard Palletized & Strapped</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Standard Dispatch Queue (24-48h)</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Batch UTM Certificate Included</li>
+            </ul>
+          </div>
+          <button data-open-quote data-product-name="Tier 1 Wholesale Order" class="btn-outline-dark text-xs py-2.5 w-full text-center">
+            Request Tier 1 Rate
+          </button>
+        </div>
+
+        <!-- Tier 2 (Highlighted) -->
+        <div class="bg-charcoal-900 text-white rounded-lg border-2 border-brick-red p-8 shadow-xl flex flex-col justify-between relative transform md:-translate-y-2">
+          <span class="absolute top-0 right-8 -translate-y-1/2 bg-brick-red text-white font-mono text-[11px] uppercase tracking-wider px-3 py-1 rounded font-bold">
+            Most Popular For Contractors
+          </span>
+          <div>
+            <div class="font-mono text-xs text-orange-400 uppercase font-semibold">Tier 2: Major Project</div>
+            <h3 class="text-2xl font-heading font-bold text-white mt-1 mb-2">6 - 25 Truckloads</h3>
+            <div class="text-4xl font-heading font-extrabold text-orange-400 mb-4">12% - 16% Discount</div>
+            <p class="text-concrete-300 text-xs mb-6 leading-relaxed">
+              Designed for multi-story residential towers, commercial warehouses, and school campuses.
+            </p>
+            <ul class="space-y-2.5 text-xs text-concrete-300 font-mono mb-8 border-t border-charcoal-700 pt-4">
+              <li><i class="fa-solid fa-check text-orange-400 mr-2"></i> Priority Plant Production Slot</li>
+              <li><i class="fa-solid fa-check text-orange-400 mr-2"></i> Scheduled Just-In-Time Site Staging</li>
+              <li><i class="fa-solid fa-check text-orange-400 mr-2"></i> Knuckle-Boom Crane Offloading Included</li>
+              <li><i class="fa-solid fa-check text-orange-400 mr-2"></i> Net 30 Commercial Credit Terms</li>
+            </ul>
+          </div>
+          <button data-open-quote data-product-name="Tier 2 Major Project Order" class="btn-brick text-xs py-2.5 w-full text-center">
+            Request Tier 2 Contractor Quote
+          </button>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="bg-white rounded-lg border border-gray-200 p-8 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="font-mono text-xs text-gray-500 uppercase font-semibold">Tier 3: Mega Infrastructure</div>
+            <h3 class="text-2xl font-heading font-bold text-gray-900 mt-1 mb-2">25+ Truckloads</h3>
+            <div class="text-3xl font-heading font-extrabold text-emerald-600 mb-4">Up to 22% Off</div>
+            <p class="text-gray-600 text-xs mb-6 leading-relaxed">
+              For highway retaining walls, deep-water ports, municipal housing, and airport taxiways.
+            </p>
+            <ul class="space-y-2.5 text-xs text-gray-700 font-mono mb-8 border-t border-gray-100 pt-4">
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Dedicated Custom Plant Production Run</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> Full 18-Month Price Lock-In Guarantee</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> On-Site Dedicated Logistics Coordinator</li>
+              <li><i class="fa-solid fa-check text-emerald-600 mr-2"></i> 3rd Party Independent Lab Audit Included</li>
+            </ul>
+          </div>
+          <button data-open-quote data-product-name="Tier 3 Infrastructure Order" class="btn-outline-dark text-xs py-2.5 w-full text-center">
+            Consult Executive Accounts
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PRODUCT-WISE PRICING & SPEC TABLE ================= -->
+  <section class="py-16 bg-concrete-100 border-t border-b border-concrete-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8">
+        <div>
+          <span class="text-brick-red font-mono text-xs uppercase tracking-widest font-bold">Reference Price Sheet</span>
+          <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-gray-900 mt-1">
+            Product-Wise Wholesale Pricing Table
+          </h2>
+          <p class="text-gray-600 text-xs sm:text-sm mt-1">
+            *Sample contractor estimate rates based on full truckload dispatch. Final formal quotes factor in exact delivery radius and volume tier.
+          </p>
+        </div>
+        <div class="mt-4 md:mt-0 font-mono text-xs text-gray-500">
+          Updated: Q1 2026 Commercial Price Index
+        </div>
+      </div>
+
+      <!-- Pricing Table Responsive Container -->
+      <div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-x-auto">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="bg-charcoal-900 text-white font-heading uppercase text-xs tracking-wider">
+              <th class="py-4 px-6">Product / Material</th>
+              <th class="py-4 px-4">Standard Dimensions</th>
+              <th class="py-4 px-4">Compressive Rating</th>
+              <th class="py-4 px-4">Pallet Packaging</th>
+              <th class="py-4 px-4">Wholesale Sample Price</th>
+              <th class="py-4 px-6 text-right">Action</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 font-mono text-xs text-gray-700">
+            
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="py-4 px-6 font-semibold text-gray-900 font-sans text-sm">
+                Solid Concrete Block (8-Inch)
+                <span class="block text-[10px] text-gray-400 font-mono">High Density Load-Bearing</span>
+              </td>
+              <td class="py-4 px-4">400 x 200 x 200 mm</td>
+              <td class="py-4 px-4 text-brick-red font-bold">12.5 N/mm² (1815 PSI)</td>
+              <td class="py-4 px-4">60 Units / Pallet</td>
+              <td class="py-4 px-4 font-bold text-gray-900">$2.45 - $2.85 / unit</td>
+              <td class="py-4 px-6 text-right">
+                <button data-open-quote data-product-name="Solid Concrete Block (8-Inch)" class="btn-brick text-[11px] py-1.5 px-3">
+                  Quote
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="py-4 px-6 font-semibold text-gray-900 font-sans text-sm">
+                Structural Solid Concrete Block (6-Inch)
+                <span class="block text-[10px] text-gray-400 font-mono">Medium Foundation / Partition</span>
+              </td>
+              <td class="py-4 px-4">400 x 150 x 200 mm</td>
+              <td class="py-4 px-4 text-brick-red font-bold">10.5 N/mm²</td>
+              <td class="py-4 px-4">75 Units / Pallet</td>
+              <td class="py-4 px-4 font-bold text-gray-900">$1.95 - $2.30 / unit</td>
+              <td class="py-4 px-6 text-right">
+                <button data-open-quote data-product-name="Solid Concrete Block (6-Inch)" class="btn-brick text-[11px] py-1.5 px-3">
+                  Quote
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="py-4 px-6 font-semibold text-gray-900 font-sans text-sm">
+                Reinforced 2-Core Hollow Block
+                <span class="block text-[10px] text-gray-400 font-mono">Acoustic / Infill Walls</span>
+              </td>
+              <td class="py-4 px-4">400 x 200 x 200 mm</td>
+              <td class="py-4 px-4 text-orange-600 font-bold">8.5 N/mm²</td>
+              <td class="py-4 px-4">72 Units / Pallet</td>
+              <td class="py-4 px-4 font-bold text-gray-900">$1.85 - $2.15 / unit</td>
+              <td class="py-4 px-6 text-right">
+                <button data-open-quote data-product-name="Reinforced 2-Core Hollow Concrete Block" class="btn-brick text-[11px] py-1.5 px-3">
+                  Quote
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="py-4 px-6 font-semibold text-gray-900 font-sans text-sm">
+                AAC Lightweight Autoclaved Block
+                <span class="block text-[10px] text-gray-400 font-mono">Thermal High-Rise Superstructure</span>
+              </td>
+              <td class="py-4 px-4">600 x 200 x 150 mm</td>
+              <td class="py-4 px-4 text-emerald-600 font-bold">4.5 N/mm² (Light)</td>
+              <td class="py-4 px-4">54 Units / Pallet</td>
+              <td class="py-4 px-4 font-bold text-gray-900">$2.60 - $3.10 / unit</td>
+              <td class="py-4 px-6 text-right">
+                <button data-open-quote data-product-name="AAC Lightweight Block" class="btn-brick text-[11px] py-1.5 px-3">
+                  Quote
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="py-4 px-6 font-semibold text-gray-900 font-sans text-sm">
+                High-Compression Fly Ash Eco-Bricks
+                <span class="block text-[10px] text-gray-400 font-mono">LEED Green Building Certified</span>
+              </td>
+              <td class="py-4 px-4">230 x 110 x 75 mm</td>
+              <td class="py-4 px-4 text-brick-red font-bold">10.0 N/mm²</td>
+              <td class="py-4 px-4">500 Bricks / Pallet</td>
+              <td class="py-4 px-4 font-bold text-gray-900">$0.38 - $0.48 / brick</td>
+              <td class="py-4 px-6 text-right">
+                <button data-open-quote data-product-name="High-Compression Fly Ash Eco-Bricks" class="btn-brick text-[11px] py-1.5 px-3">
+                  Quote
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="py-4 px-6 font-semibold text-gray-900 font-sans text-sm">
+                Machine-Pressed Red Clay Kiln Bricks
+                <span class="block text-[10px] text-gray-400 font-mono">Tunnel Fired at 1,050°C</span>
+              </td>
+              <td class="py-4 px-4">230 x 115 x 75 mm</td>
+              <td class="py-4 px-4 text-industrial-orange font-bold">15.0 - 20.0 N/mm²</td>
+              <td class="py-4 px-4">500 Bricks / Pallet</td>
+              <td class="py-4 px-4 font-bold text-gray-900">$0.52 - $0.65 / brick</td>
+              <td class="py-4 px-6 text-right">
+                <button data-open-quote data-product-name="Machine-Pressed Red Clay Kiln Bricks" class="btn-brick text-[11px] py-1.5 px-3">
+                  Quote
+                </button>
+              </td>
+            </tr>
+
+            <tr class="hover:bg-gray-50 transition-colors">
+              <td class="py-4 px-6 font-semibold text-gray-900 font-sans text-sm">
+                80mm Interlocking Zig-Zag Pavers
+                <span class="block text-[10px] text-gray-400 font-mono">M-50 Airport / Port Grade</span>
+              </td>
+              <td class="py-4 px-4">Thickness: 80 mm</td>
+              <td class="py-4 px-4 text-blue-600 font-bold">45.0 - 50.0 N/mm²</td>
+              <td class="py-4 px-4">12 sq.m / Pallet (430 pcs)</td>
+              <td class="py-4 px-4 font-bold text-gray-900">$14.50 - $18.00 / sq.m</td>
+              <td class="py-4 px-6 text-right">
+                <button data-open-quote data-product-name="80mm Interlocking Zig-Zag Pavers" class="btn-brick text-[11px] py-1.5 px-3">
+                  Quote
+                </button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= INTERACTIVE BULK QUANTITY & MATERIAL ESTIMATOR ================= -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="bg-charcoal-900 text-white rounded-2xl p-6 sm:p-10 lg:p-12 border border-charcoal-700 shadow-2xl">
+        <div class="max-w-3xl mb-8">
+          <span class="text-orange-400 font-mono text-xs uppercase tracking-widest font-bold">Interactive Tool</span>
+          <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-white mt-1">
+            Commercial Material Estimator & Bulk Calculator
+          </h2>
+          <p class="text-concrete-300 text-sm mt-2">
+            Calculate your exact units, required pallets, shipping tonnage, mortar bags, and estimated wholesale cost range in real-time.
+          </p>
+        </div>
+
+        <form id="material-calculator-form" class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Inputs Column -->
+          <div class="lg:col-span-7 space-y-4">
+            
+            <div>
+              <label class="block text-xs font-mono uppercase text-gray-300 mb-1">Select Building Material *</label>
+              <select id="calc-product" class="w-full bg-charcoal-800 border border-charcoal-600 rounded px-3 py-2.5 text-sm text-white focus:outline-none focus:border-orange-500 font-mono">
+                <option value="solid-8">Solid Concrete Block (8-Inch) - 400x200x200mm</option>
+                <option value="hollow-8">Hollow Concrete Block (2-Core) - 400x200x200mm</option>
+                <option value="aac-block">AAC Lightweight Block - 600x200x150mm</option>
+                <option value="fly-ash">Fly Ash Eco-Brick - 230x110x75mm</option>
+                <option value="red-clay">Red Clay Kiln Brick - 230x115x75mm</option>
+                <option value="paver-80">Zig-Zag Paver Block (80mm Heavy Traffic)</option>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono uppercase text-gray-300 mb-1">Calculation Input Mode</label>
+                <select id="calc-mode" class="w-full bg-charcoal-800 border border-charcoal-600 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-orange-500 font-mono">
+                  <option value="area">By Wall / Pavement Area</option>
+                  <option value="direct">By Direct Units Required</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-xs font-mono uppercase text-gray-300 mb-1">Breakage / Wastage Margin</label>
+                <select id="calc-wastage" class="w-full bg-charcoal-800 border border-charcoal-600 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-orange-500 font-mono">
+                  <option value="0.05">5% (Recommended for Blocks)</option>
+                  <option value="0.08">8% (Standard Bricks & Cutting)</option>
+                  <option value="0.10">10% (Complex Curves / Angled Cuts)</option>
+                  <option value="0.00">0% (Exact Net Units)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Area Group -->
+            <div id="calc-area-group" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-mono uppercase text-gray-300 mb-1">Total Wall or Surface Area *</label>
+                <input type="number" id="calc-area" value="5000" min="10" step="10" 
+                       class="w-full bg-charcoal-800 border border-charcoal-600 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-orange-500 font-mono">
+              </div>
+              <div>
+                <label class="block text-xs font-mono uppercase text-gray-300 mb-1">Unit of Measurement</label>
+                <select id="calc-unit-type" class="w-full bg-charcoal-800 border border-charcoal-600 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-orange-500 font-mono">
+                  <option value="sqft">Square Feet (sq. ft.)</option>
+                  <option value="sqm">Square Meters (sq. m.)</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Direct Units Group (Hidden initially) -->
+            <div id="calc-direct-group" class="hidden">
+              <label class="block text-xs font-mono uppercase text-gray-300 mb-1">Direct Quantity of Blocks/Bricks *</label>
+              <input type="number" id="calc-units-direct" value="6000" min="100" step="100" 
+                     class="w-full bg-charcoal-800 border border-charcoal-600 rounded px-3 py-2 text-sm text-white focus:outline-none focus:border-orange-500 font-mono">
+            </div>
+
+          </div>
+
+          <!-- Calculation Outputs Column -->
+          <div class="lg:col-span-5 bg-charcoal-950 border border-charcoal-700 p-6 rounded-xl flex flex-col justify-between">
+            <div>
+              <div class="font-mono text-xs uppercase text-orange-400 font-bold tracking-wider mb-4 border-b border-charcoal-800 pb-2">
+                Estimated Output Metrics
+              </div>
+
+              <div class="space-y-3 font-mono text-sm">
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-400 text-xs">Gross Material Required:</span>
+                  <span id="calc-result-units" class="text-white font-bold text-lg">0 Units</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-400 text-xs">Strapped Pallets Needed:</span>
+                  <span id="calc-result-pallets" class="text-orange-400 font-bold">0 Pallets</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-400 text-xs">Estimated Freight Weight:</span>
+                  <span id="calc-result-weight" class="text-emerald-400 font-bold">0 Tonnes</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-400 text-xs">Mortar / Adhesive Bags:</span>
+                  <span id="calc-result-mortar" class="text-gray-300 font-bold">0 Bags</span>
+                </div>
+                <div class="pt-3 border-t border-charcoal-800 flex justify-between items-center">
+                  <span class="text-gray-400 text-xs font-sans">Estimated Wholesale Range:</span>
+                  <span id="calc-result-price" class="text-white font-bold text-xl font-heading tracking-wide">$0</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-charcoal-800">
+              <button type="button" id="calc-send-quote" class="btn-orange w-full py-3 text-xs text-center font-heading tracking-wider">
+                <i class="fa-solid fa-paper-plane mr-2"></i> Transfer to Official Quote Form
+              </button>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= MOQ & DELIVERY CHARGES MATRIX ================= -->
+  <section class="py-16 bg-warm-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Minimum Order Quantity Info -->
+        <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-brick-red/10 text-brick-red rounded flex items-center justify-center text-lg">
+              <i class="fa-solid fa-boxes-packing"></i>
+            </div>
+            <h3 class="text-xl font-heading font-bold text-gray-900">Minimum Order Quantities (MOQ)</h3>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed mb-4">
+            As a commercial manufacturer, our automated press and kiln lines produce units in bulk palletized batches:
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-gray-700">
+            <li class="flex justify-between border-b border-gray-100 pb-1.5">
+              <span>Solid / Hollow Concrete Blocks:</span>
+              <span class="font-bold text-gray-900">5 Pallets (~300 - 375 Units)</span>
+            </li>
+            <li class="flex justify-between border-b border-gray-100 py-1.5">
+              <span>AAC Lightweight Blocks:</span>
+              <span class="font-bold text-gray-900">4 Pallets (~216 Units)</span>
+            </li>
+            <li class="flex justify-between border-b border-gray-100 py-1.5">
+              <span>Clay Kiln & Fly Ash Bricks:</span>
+              <span class="font-bold text-gray-900">6 Pallets (~3,000 Bricks)</span>
+            </li>
+            <li class="flex justify-between border-b border-gray-100 py-1.5">
+              <span>Interlocking Heavy Pavers:</span>
+              <span class="font-bold text-gray-900">50 sq. meters (~1,800 Pavers)</span>
+            </li>
+            <li class="flex justify-between py-1.5">
+              <span>Custom CNC Mold Precast:</span>
+              <span class="font-bold text-gray-900">Subject to mold tooling MOQ</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Delivery Charges Matrix -->
+        <div class="bg-white p-8 rounded-lg border border-gray-200 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-orange-500/10 text-orange-600 rounded flex items-center justify-center text-lg">
+              <i class="fa-solid fa-truck-fast"></i>
+            </div>
+            <h3 class="text-xl font-heading font-bold text-gray-900">Freight & Transportation Charges</h3>
+          </div>
+          <p class="text-gray-600 text-xs leading-relaxed mb-4">
+            Delivered directly from Plant 1 & 2 via dedicated flatbed trailers with rear hydraulic knuckle-boom cranes:
+          </p>
+          <ul class="space-y-2 text-xs font-mono text-gray-700">
+            <li class="flex justify-between border-b border-gray-100 pb-1.5">
+              <span>Zone 1 (&lt; 25 Miles from Plant):</span>
+              <span class="font-bold text-emerald-600">FREE on 2+ Full Truckloads</span>
+            </li>
+            <li class="flex justify-between border-b border-gray-100 py-1.5">
+              <span>Zone 2 (25 - 60 Miles):</span>
+              <span class="font-bold text-gray-900">Flat $180 / Flatbed Trip</span>
+            </li>
+            <li class="flex justify-between border-b border-gray-100 py-1.5">
+              <span>Zone 3 (60 - 120 Miles):</span>
+              <span class="font-bold text-gray-900">Flat $320 / Flatbed Trip</span>
+            </li>
+            <li class="flex justify-between border-b border-gray-100 py-1.5">
+              <span>Regional Freight (120+ Miles):</span>
+              <span class="font-bold text-gray-900">Calculated by mileage/tonnage</span>
+            </li>
+            <li class="flex justify-between py-1.5">
+              <span>Knuckle-Boom Offload to 2nd Floor:</span>
+              <span class="font-bold text-gray-900">Complimentary on all crane rigs</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= WHOLESALE INVENTORY & OPERATIONS SHOWCASE ================= -->
+  <section class="py-20 bg-white border-t border-concrete-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-brick-red font-mono text-xs uppercase tracking-widest font-bold">Wholesale Infrastructure</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-gray-900 mt-2">
+          Industrial Bulk Supply & Warehouse Inventory
+        </h2>
+        <p class="text-gray-600 mt-3 text-base">
+          Tour our 45-acre bulk staging yards, automated warehousing, and high-tonnage freight loading infrastructure capable of dispatching 80,000+ units daily.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Item 1: Large concrete block inventory -->
+        <div class="group bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all">
+          <div class="h-60 overflow-hidden bg-gray-100">
+            <img src="images/warehouse/cured-blocks-inventory.jpg" alt="Large Concrete Block Inventory" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-5">
+            <span class="text-brick-red font-mono text-[11px] uppercase tracking-wider font-bold">Yard Staging</span>
+            <h3 class="font-heading font-bold text-lg text-gray-900 mt-1 mb-2">Large-Scale Concrete Block Inventory</h3>
+            <p class="text-gray-600 text-xs leading-relaxed">
+              Continuous stock of over 250,000 steam-cured solid and hollow blocks ready for immediate same-day site staging.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 2: Pallets of cement bricks -->
+        <div class="group bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all">
+          <div class="h-60 overflow-hidden bg-gray-100">
+            <img src="images/products/cement-bricks.jpg" alt="Pallets of Cement Bricks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-5">
+            <span class="text-industrial-orange font-mono text-[11px] uppercase tracking-wider font-bold">Unit Palletizing</span>
+            <h3 class="font-heading font-bold text-lg text-gray-900 mt-1 mb-2">Pallets of Hydraulic Cement Bricks</h3>
+            <p class="text-gray-600 text-xs leading-relaxed">
+              Precision-banded 480-unit pallets with weather-proof protective shrink wrap and corner guards for zero chipping.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 3: Wholesale material warehouse -->
+        <div class="group bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all">
+          <div class="h-60 overflow-hidden bg-gray-100">
+            <img src="images/warehouse/warehouse-pallets.jpg" alt="Wholesale Construction Material Warehouse" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-5">
+            <span class="text-brick-red font-mono text-[11px] uppercase tracking-wider font-bold">Storage Racks</span>
+            <h3 class="font-heading font-bold text-lg text-gray-900 mt-1 mb-2">Wholesale Material Logistics Warehouse</h3>
+            <p class="text-gray-600 text-xs leading-relaxed">
+              Temperature-regulated multi-tier storage facility preserving specialized mortar dry-mixes, additives, and AAC cellular units.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 4: Bulk loading operations -->
+        <div class="group bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all">
+          <div class="h-60 overflow-hidden bg-gray-100">
+            <img src="images/delivery/forklift-loading.jpg" alt="Bulk Loading Operations" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-5">
+            <span class="text-industrial-orange font-mono text-[11px] uppercase tracking-wider font-bold">Rapid Dispatch</span>
+            <h3 class="font-heading font-bold text-lg text-gray-900 mt-1 mb-2">High-Capacity Bulk Loading Operations</h3>
+            <p class="text-gray-600 text-xs leading-relaxed">
+              Heavy 5-ton Komatsu yard forklifts loading dual trailers simultaneously in under 15 minutes per flatbed rig.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 5: Heavy-duty transportation trucks -->
+        <div class="group bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all">
+          <div class="h-60 overflow-hidden bg-gray-100">
+            <img src="images/delivery/man-block-truck.jpg" alt="Heavy-Duty Transportation Trucks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-5">
+            <span class="text-brick-red font-mono text-[11px] uppercase tracking-wider font-bold">Highway Freight</span>
+            <h3 class="font-heading font-bold text-lg text-gray-900 mt-1 mb-2">Heavy-Duty Material Transportation Trucks</h3>
+            <p class="text-gray-600 text-xs leading-relaxed">
+              32-ton MAN and Volvo heavy haulers with integrated clamp loaders and pneumatic axle balancing for highway stability.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 6: Stacked Kiln Bricks -->
+        <div class="group bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm hover:shadow-xl transition-all">
+          <div class="h-60 overflow-hidden bg-gray-100">
+            <img src="images/products/red-clay-bricks.jpg" alt="Stacked Red Clay Kiln Bricks" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-5">
+            <span class="text-industrial-orange font-mono text-[11px] uppercase tracking-wider font-bold">Kiln Vitrified</span>
+            <h3 class="font-heading font-bold text-lg text-gray-900 mt-1 mb-2">Vitrified Clay Facing Bricks</h3>
+            <p class="text-gray-600 text-xs leading-relaxed">
+              Over 1.5 million wire-cut and pressed architectural bricks cured and staged for immediate high-volume residential dispatch.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FREQUENTLY ASKED QUESTIONS (ACCORDION) ================= -->
+  <section class="py-16 bg-concrete-100 border-t border-concrete-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <span class="text-brick-red font-mono text-xs uppercase tracking-widest font-bold">Clarifications</span>
+        <h2 class="text-3xl sm:text-4xl font-heading font-extrabold text-gray-900 mt-1">
+          Bulk Pricing & Ordering FAQs
+        </h2>
+      </div>
+
+      <div class="space-y-4" id="faq-container">
+        
+        <div class="faq-item active bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+          <button class="w-full py-4 px-6 text-left flex justify-between items-center font-heading font-bold text-lg text-gray-900 hover:text-brick-red transition-colors focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+            <span>How do you lock in bulk pricing for multi-phase construction projects?</span>
+            <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300 text-xs text-gray-400"></i>
+          </button>
+          <div class="faq-answer px-6 pb-4 text-xs text-gray-600 leading-relaxed font-sans">
+            Upon signing a commercial supply agreement with an approved schedule of quantities, we lock your quoted price for up to 18 months, shielding your project budget against raw cement, aggregate, or fuel market spikes.
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+          <button class="w-full py-4 px-6 text-left flex justify-between items-center font-heading font-bold text-lg text-gray-900 hover:text-brick-red transition-colors focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+            <span>What happens if blocks break or chip during transit?</span>
+            <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300 text-xs text-gray-400"></i>
+          </button>
+          <div class="faq-answer px-6 pb-4 text-xs text-gray-600 leading-relaxed font-sans">
+            We provide a 100% Zero-Breakage Guarantee. All pallets are corner-reinforced and plastic banded. If any pallet sustains damage exceeding the standard 2% industry handling margin, we replace the chipped units on the very next dispatch at zero cost.
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+          <button class="w-full py-4 px-6 text-left flex justify-between items-center font-heading font-bold text-lg text-gray-900 hover:text-brick-red transition-colors focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+            <span>How do I qualify for contractor Net-30 credit terms?</span>
+            <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300 text-xs text-gray-400"></i>
+          </button>
+          <div class="faq-answer px-6 pb-4 text-xs text-gray-600 leading-relaxed font-sans">
+            Licensed general contractors, masonry sub-contractors, and civil engineering firms can apply online via our Contractor Portal. Once our finance desk verifies your commercial credit references (typically 24 hours), Net-30 credit accounts are activated.
+          </div>
+        </div>
+
+        <div class="faq-item bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm">
+          <button class="w-full py-4 px-6 text-left flex justify-between items-center font-heading font-bold text-lg text-gray-900 hover:text-brick-red transition-colors focus:outline-none" onclick="this.parentElement.classList.toggle('active')">
+            <span>Can you produce custom concrete colors or compressive strengths?</span>
+            <i class="fa-solid fa-chevron-down faq-icon transition-transform duration-300 text-xs text-gray-400"></i>
+          </button>
+          <div class="faq-answer px-6 pb-4 text-xs text-gray-600 leading-relaxed font-sans">
+            Yes. Our batching plant incorporates automated color dosing systems (Terracotta, Charcoal, Ochre, Sandstone) and can engineer custom mixes up to M-60 Grade (60 MPa) for specialized bridge piers and high-load containment structures.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+    <!-- ================= STRONG INDUSTRIAL ENQUIRY CTA SECTION ================= -->
+  <section class="dark-surface py-16 sm:py-20 bg-charcoal-950 text-white relative overflow-hidden border-t border-charcoal-800">
+    <div class="absolute inset-0 bg-industrial-grid-dark opacity-20 pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="dark-surface industrial-cta-box p-8 sm:p-12 lg:p-16 flex flex-col lg:flex-row items-center justify-between gap-10">
+        <div class="max-w-2xl">
+          <div class="cta-label mb-3">
+            <i class="fa-solid fa-phone-volume"></i>
+            <span>Direct Factory Dispatch Hotline</span>
+          </div>
+          <h2 class="cta-heading text-3xl sm:text-4xl lg:text-5xl font-heading font-extrabold text-white leading-tight">
+            Ready to Build With Guaranteed Structural Integrity?
+          </h2>
+          <p class="cta-desc text-base mt-4 leading-relaxed">
+            Send us your structural masonry schedule or bill of quantities (BOQ). Our technical plant engineers will calculate exact pallet logistics and return a formal wholesale quote within 2 hours.
+          </p>
+          <div class="cta-perks mt-6">
+            <div class="cta-perk-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Wholesale Volume Tiering</span>
+            </div>
+            <div class="cta-perk-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Free Lab Sample Cubes</span>
+            </div>
+            <div class="cta-perk-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Guaranteed Transit Safety</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-actions flex flex-col sm:flex-row lg:flex-col gap-4 w-full sm:w-auto flex-shrink-0">
+          <button data-open-quote class="cta-btn-primary">
+            <i class="fa-solid fa-calculator"></i>
+            <span>Request Bulk Quotation</span>
+          </button>
+          <a href="contact.html" class="cta-btn-secondary">
+            <i class="fa-solid fa-calendar-check"></i>
+            <span>Schedule Plant Visit</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= MASTER INDUSTRIAL FOOTER ================= -->
+  <footer class="bg-charcoal-950 text-concrete-300 pt-16 pb-8 border-t border-charcoal-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+        <!-- Col 1: TITAN BRICK -->
+        <div>
+          <a href="index.html" class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 bg-brick-red rounded flex items-center justify-center text-white text-xl">
+              <i class="fa-solid fa-cubes-stacked"></i>
+            </div>
+            <div>
+              <div class="font-heading font-extrabold text-2xl footer-brand tracking-wider uppercase">TITAN BRICK</div>
+              <div class="text-[9px] font-mono tracking-widest text-concrete-400 uppercase">Heavy Industry • Concrete Works</div>
+            </div>
+          </a>
+          <p class="text-concrete-400 text-sm leading-relaxed mb-4">
+            Commercial manufacturer of high-strength concrete masonry units, ASTM C90 load-bearing blocks, AAC lightweight units, and vitrified clay bricks. ISO 9001:2015 certified plant operations.
+          </p>
+          <div class="flex items-center gap-3 text-base">
+            <a href="#" class="w-8 h-8 rounded bg-charcoal-800 text-gray-300 hover:text-white hover:bg-brick-red flex items-center justify-center transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="w-8 h-8 rounded bg-charcoal-800 text-gray-300 hover:text-white hover:bg-brick-red flex items-center justify-center transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-8 h-8 rounded bg-charcoal-800 text-gray-300 hover:text-white hover:bg-brick-red flex items-center justify-center transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: PAGES -->
+        <div>
+          <h4 class="font-heading font-bold footer-heading text-lg uppercase tracking-wider mb-4 border-b border-charcoal-800 pb-2">Pages</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-brick-red transition-colors">Home 1 – Industrial</a></li>
+            <li><a href="home-2.html" class="hover:text-brick-red transition-colors">Home 2 – Materials</a></li>
+            <li><a href="about.html" class="hover:text-brick-red transition-colors">About Us</a></li>
+            <li><a href="products.html" class="hover:text-brick-red transition-colors">Products Catalogue</a></li>
+            <li><a href="services.html" class="hover:text-brick-red transition-colors">Manufacturing Services</a></li>
+            <li><a href="bulk-pricing.html" class="hover:text-brick-red transition-colors">Wholesale Bulk Pricing</a></li>
+            <li><a href="delivery.html" class="hover:text-brick-red transition-colors">Logistics & Fleet</a></li>
+            <li><a href="blog.html" class="hover:text-brick-red transition-colors">Technical Blog</a></li>
+            <li><a href="contact.html" class="hover:text-brick-red transition-colors">Contact Plant</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: PLANT DISPATCH -->
+        <div>
+          <h4 class="font-heading font-bold footer-heading text-lg uppercase tracking-wider mb-4 border-b border-charcoal-800 pb-2">Plant Dispatch</h4>
+          <div class="space-y-3 text-xs font-mono text-gray-400">
+            <div>
+              <span class="block text-concrete-500 uppercase font-bold text-[10px]">Headquarters & Plant 1:</span>
+              <span class="text-concrete-300">4200 Industrial Parkway, Heavy Works Zone, OH 44135</span>
+            </div>
+            <div>
+              <span class="block text-concrete-500 uppercase font-bold text-[10px]">Direct Plant Hotline:</span>
+              <a href="tel:18004582742" class="footer-phone hover:text-brick-red transition-colors font-bold">+1 (800) 458-BRICK</a>
+            </div>
+            <div>
+              <span class="block text-concrete-500 uppercase font-bold text-[10px]">Direct Dispatch Desk:</span>
+              <a href="tel:15554329000" class="text-concrete-300 hover:text-brick-red transition-colors">+1 (555) 432-9000</a>
+            </div>
+            <div>
+              <span class="block text-concrete-500 uppercase font-bold text-[10px]">Wholesale Email:</span>
+              <a href="mailto:dispatch@titanbrickconcrete.com" class="text-concrete-300 hover:text-brick-red transition-colors">dispatch@titanbrickconcrete.com</a>
+            </div>
+            <div>
+              <span class="block text-concrete-500 uppercase font-bold text-[10px]">Operating Hours:</span>
+              <span class="text-concrete-300">Monday - Saturday: 06:00 - 19:00 EST</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 4: CONTRACTOR ACCESS -->
+        <div>
+          <h4 class="font-heading font-bold footer-heading text-lg uppercase tracking-wider mb-4 border-b border-charcoal-800 pb-2">Contractor Access</h4>
+          <p class="text-xs text-concrete-400 mb-4 leading-relaxed">
+            Authorized contractor portal for real-time production schedules, UTM laboratory test certificates, and automated Net-30 purchase order financing.
+          </p>
+          <div class="space-y-3">
+            <a href="login.html" class="btn-orange btn-portal text-xs py-2.5 px-4 block text-center font-heading uppercase tracking-wider shadow-md">
+              <i class="fa-solid fa-lock mr-1.5"></i> Sign In to Portal
+            </a>
+            <a href="register.html" class="btn-outline-concrete btn-register text-xs py-2.5 px-4 block text-center font-heading uppercase tracking-wider">
+              <i class="fa-solid fa-user-plus mr-1.5"></i> Register Wholesale Account
+            </a>
+          </div>
+          <div class="mt-4 pt-3 border-t border-charcoal-800 text-[11px] font-mono text-gray-400 flex items-center justify-between">
+            <span>ASTM C90 Certified</span>
+            <span class="text-emerald-400"><i class="fa-solid fa-shield-halved"></i> 256-Bit SSL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="border-t border-charcoal-800 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-concrete-500">
+        <div>
+          © 2026 Titan Brick & Concrete Industries Inc. All rights reserved. Heavy commercial structural masonry.
+        </div>
+        <div class="flex items-center gap-6 font-mono">
+          <a href="privacy-policy.html" class="hover:text-brick-red transition-colors">Privacy Policy</a>
+          <a href="terms.html" class="hover:text-brick-red transition-colors">Terms & Conditions</a>
+          <a href="login.html" class="hover:text-brick-red transition-colors">Contractor Portal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modals & Scripts -->
+  <div id="quote-modal" class="modal-overlay fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 backdrop-blur-sm">
+    <div class="modal-container bg-charcoal-900 text-white border border-charcoal-700 w-full max-w-2xl rounded-lg shadow-2xl overflow-hidden p-6">
+      <div class="flex justify-between items-center mb-4 pb-2 border-b border-charcoal-800">
+        <h3 class="font-heading font-bold text-xl">Official Bulk Quotation</h3>
+        <button data-close-modal class="text-gray-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <form id="quick-quote-modal-form" class="space-y-4">
+        <input type="text" id="quote-name" required placeholder="Full Name *" class="w-full bg-charcoal-800 border border-charcoal-700 rounded px-3 py-2 text-sm text-white">
+        <input type="email" id="quote-email" required placeholder="Business Email *" class="w-full bg-charcoal-800 border border-charcoal-700 rounded px-3 py-2 text-sm text-white">
+        <input type="tel" id="quote-phone" required placeholder="Phone *" class="w-full bg-charcoal-800 border border-charcoal-700 rounded px-3 py-2 text-sm text-white">
+        <select id="quote-product-select" class="w-full bg-charcoal-800 border border-charcoal-700 rounded px-3 py-2 text-sm text-white">
+          <option value="Solid Concrete Block (8-Inch)">Solid Concrete Block (8-Inch)</option>
+          <option value="Hollow Concrete Block (2-Core)">Hollow Concrete Block (2-Core)</option>
+          <option value="AAC Lightweight Block">AAC Lightweight Block</option>
+          <option value="Fly Ash Eco-Bricks">Fly Ash Eco-Bricks</option>
+          <option value="Machine-Pressed Red Clay Kiln Bricks">Red Clay Kiln Bricks</option>
+          <option value="80mm Interlocking Zig-Zag Pavers">80mm Interlocking Zig-Zag Pavers</option>
+        </select>
+        <input type="text" id="quote-qty" required placeholder="Required Units / Pallets *" class="w-full bg-charcoal-800 border border-charcoal-700 rounded px-3 py-2 text-sm text-white">
+        <textarea id="quote-notes" rows="3" placeholder="Additional specifications, delivery address, site staging requirements..." class="w-full bg-charcoal-800 border border-charcoal-700 rounded px-3 py-2 text-sm text-white"></textarea>
+        <button type="submit" class="btn-brick w-full py-2.5">Generate Official Wholesale Quote</button>
+      </form>
+    </div>
+  </div>
+  <button id="back-to-top" title="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+  <script src="js/products-data.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/calculator.js"></script>
+  <script src="js/forms.js"></script>
+</body>
+</html>

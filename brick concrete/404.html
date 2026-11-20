@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Blueprint Not Found | Titan Brick & Concrete Industries</title>
+  <meta name="description" content="The requested masonry blueprint or page could not be located in our plant directory.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'brick-red': '#b83a24',
+            'brick-red-hover': '#9c2e1b',
+            'industrial-orange': '#ea580c',
+            'charcoal-950': '#0a0b0d',
+            'charcoal-900': '#121316',
+            'charcoal-800': '#1e2126',
+            'charcoal-700': '#2b2f36',
+            'concrete-100': '#f1f3f6',
+            'concrete-200': '#dce0e6',
+            'concrete-400': '#8c939d',
+            'concrete-500': '#626974',
+          },
+          fontFamily: {
+            heading: ['Barlow Condensed', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Font Awesome Free Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Industrial Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-charcoal-950 text-gray-200 antialiased flex flex-col min-h-screen">
+
+  <header class="py-6 px-4 sm:px-8 border-b border-charcoal-800 bg-charcoal-900">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-brick-red rounded flex items-center justify-center text-white text-xl">
+          <i class="fa-solid fa-cubes-stacked"></i>
+        </div>
+        <div>
+          <div class="font-heading font-extrabold text-2xl footer-brand tracking-wider uppercase">TITAN BRICK</div>
+          <div class="text-[9px] font-mono tracking-widest text-concrete-400 uppercase">Heavy Industry • Concrete Works</div>
+        </div>
+      </a>
+            <div class="flex items-center gap-3">
+        <!-- Direction Switcher (LTR / RTL) -->
+        <div class="navbar-dir-switch" role="group" aria-label="Layout Direction">
+          <button type="button" class="dir-opt-btn active" data-dir="ltr" title="Left-to-Right layout">LTR</button>
+          <button type="button" class="dir-opt-btn" data-dir="rtl" title="Right-to-Left layout">RTL</button>
+        </div>
+
+        <!-- Theme Switcher (Dark / Light) -->
+        <div class="navbar-theme-switch" role="group" aria-label="Theme Selection">
+          <button type="button" class="theme-opt-btn active" data-theme="dark" title="Dark Mode">
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <button type="button" class="theme-opt-btn" data-theme="light" title="Light Mode">
+            <i class="fa-solid fa-sun"></i>
+          </button>
+        </div>
+        <a href="index.html" class="btn-brick text-xs py-2 px-4">
+        <i class="fa-solid fa-home mr-1"></i> Home
+      </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-1 flex items-center justify-center p-6 relative text-center">
+    <div class="absolute inset-0 bg-industrial-grid-dark opacity-30 pointer-events-none"></div>
+
+    <div class="max-w-xl bg-charcoal-900 border border-charcoal-700 rounded-2xl p-8 sm:p-12 shadow-2xl relative z-10">
+      
+      <div class="w-20 h-20 bg-charcoal-800 text-brick-red border-2 border-brick-red rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+
+      <div class="font-mono text-xs uppercase text-orange-400 font-bold tracking-widest mb-2">
+        Error 404: Structural Void Detected
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-heading font-extrabold text-white mb-4">
+        Blueprint Not Found
+      </h1>
+
+      <p class="text-concrete-300 text-sm leading-relaxed mb-8">
+        The masonry section or document you are seeking has either been relocated in our production yard or never existed in the engineering schedule.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="index.html" class="btn-brick text-xs py-3 px-6">
+          <i class="fa-solid fa-house mr-1"></i> Return to Homepage
+        </a>
+        <a href="products.html" class="btn-outline-concrete text-xs py-3 px-6">
+          <i class="fa-solid fa-cubes mr-1"></i> Browse Products
+        </a>
+        <a href="contact.html" class="btn-orange text-xs py-3 px-6">
+          <i class="fa-solid fa-phone mr-1"></i> Contact Dispatch
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="py-4 border-t border-charcoal-800 text-center text-xs text-gray-500 font-mono">
+    © 2026 Titan Brick & Concrete Industries Inc. All rights reserved.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

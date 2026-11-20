@@ -1,0 +1,3109 @@
+/* ==========================================================================
+   TITAN BRICK & CONCRETE INDUSTRIES - MASTER INDUSTRIAL STYLESHEET
+   Commercial Multi-Page Website System with Dark/Light & LTR/RTL Support
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Tajawal:wght@400;500;700;800&display=swap');
+
+:root {
+  /* Specification Light Palette Defaults */
+  --bg-main:          #FFFFFF;
+  --bg-secondary:     #F4F5F6;
+  --text-primary:     #171C26;
+  --text-secondary:   #4B5563;
+  --text-heading:     #111827;
+  --text-muted:       #64748B;
+  --border-color:     #D1D5DB;
+
+  /* Brand Industrial Color Palette */
+  --charcoal-950:     #0a0b0d;
+  --charcoal-900:     #121316;
+  --charcoal-850:     #17191d;
+  --charcoal-800:     #1e2126;
+  --charcoal-700:     #2b2f36;
+  --charcoal-600:     #3c424c;
+  
+  --concrete-500:     #64748B;
+  --concrete-400:     #88909c;
+  --concrete-300:     #b5bcc7;
+  --concrete-200:     #dce0e6;
+  --concrete-100:     #F4F5F6;
+  --concrete-50:      #F4F5F6;
+  
+  --brick-red:        #C83B25;
+  --brick-red-hover:  #9C2E1B;
+  --brick-red-light:  #fceeed;
+  --brick-dark:       #5c1a0e;
+  
+  --industrial-orange: #EA580C;
+  --industrial-orange-hover: #C2410C;
+  --industrial-orange-light: #fff7ed;
+  
+  --dark-brown:       #36221a;
+  --warm-white:       #FFFFFF;
+
+  /* Fonts */
+  --font-heading: 'Barlow Condensed', sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-rtl: 'Tajawal', 'Inter', sans-serif;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-industrial: 0 12px 30px -10px rgba(18, 19, 22, 0.25);
+  --shadow-brick: 0 12px 25px -8px rgba(200, 59, 37, 0.35);
+}
+
+/* ==========================================================================
+   UTILITY BACKUP FOR INDUSTRIAL THEME CLASSES
+   ========================================================================== */
+.bg-charcoal-950 { background-color: var(--charcoal-950); }
+.bg-charcoal-900 { background-color: var(--charcoal-900); }
+.bg-charcoal-800 { background-color: var(--charcoal-800); }
+.border-charcoal-800 { border-color: var(--charcoal-800); }
+.border-charcoal-700 { border-color: var(--charcoal-700); }
+
+/* ==========================================================================
+   1. GLOBAL LIGHT MODE STYLING & HIGH-CONTRAST SYSTEM
+   Applies to html:not(.dark) and html.light
+   ========================================================================== */
+html:not(.dark),
+html.light {
+  color-scheme: light;
+}
+
+html:not(.dark) body,
+html.light body {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+}
+
+html:not(.dark) body.bg-charcoal-950,
+html.light body.bg-charcoal-950 {
+  background-color: #F4F5F6 !important;
+  color: #171C26 !important;
+}
+
+/* Base Light Backgrounds */
+html:not(.dark) .bg-warm-white,
+html.light .bg-warm-white {
+  background-color: #FFFFFF !important;
+}
+
+html:not(.dark) .bg-concrete-50,
+html:not(.dark) .bg-concrete-100,
+html:not(.dark) .bg-gray-50,
+html.light .bg-concrete-50,
+html.light .bg-concrete-100,
+html.light .bg-gray-50 {
+  background-color: #F4F5F6 !important;
+}
+
+html:not(.dark) .bg-white,
+html.light .bg-white {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+}
+
+/* Headings on light surfaces in Light Mode (excluding all dark surfaces, cards, heroes & CTAs) */
+html:not(.dark) h1:not(.dark-surface *):not(.stat-card *):not(.feature-card *):not(.mission-vision-card *):not(.industrial-cta-box *):not(.hero-banner *):not(#home-1-hero *):not(#home-2-hero *):not(section.bg-charcoal-950 *):not(section.bg-charcoal-900 *):not(div.bg-charcoal-950 *):not(div.bg-charcoal-900:not(.modal-container):not(.auth-card-light) *):not(div.bg-charcoal-800 *):not(div.bg-charcoal-800\/90 *):not(div.bg-charcoal-800\/80 *):not(.group.relative.bg-charcoal-900 *),
+html:not(.dark) h2:not(.dark-surface *):not(.stat-card *):not(.feature-card *):not(.mission-vision-card *):not(.industrial-cta-box *):not(.hero-banner *):not(#home-1-hero *):not(#home-2-hero *):not(section.bg-charcoal-950 *):not(section.bg-charcoal-900 *):not(div.bg-charcoal-950 *):not(div.bg-charcoal-900:not(.modal-container):not(.auth-card-light) *):not(div.bg-charcoal-800 *):not(div.bg-charcoal-800\/90 *):not(div.bg-charcoal-800\/80 *):not(.group.relative.bg-charcoal-900 *),
+html:not(.dark) h3:not(.dark-surface *):not(.stat-card *):not(.feature-card *):not(.mission-vision-card *):not(.industrial-cta-box *):not(.hero-banner *):not(#home-1-hero *):not(#home-2-hero *):not(section.bg-charcoal-950 *):not(section.bg-charcoal-900 *):not(div.bg-charcoal-950 *):not(div.bg-charcoal-900:not(.modal-container):not(.auth-card-light) *):not(div.bg-charcoal-800 *):not(div.bg-charcoal-800\/90 *):not(div.bg-charcoal-800\/80 *):not(.group.relative.bg-charcoal-900 *),
+html:not(.dark) h4:not(.dark-surface *):not(.stat-card *):not(.feature-card *):not(.mission-vision-card *):not(.industrial-cta-box *):not(.hero-banner *):not(#home-1-hero *):not(#home-2-hero *):not(section.bg-charcoal-950 *):not(section.bg-charcoal-900 *):not(div.bg-charcoal-950 *):not(div.bg-charcoal-900:not(.modal-container):not(.auth-card-light) *):not(div.bg-charcoal-800 *):not(div.bg-charcoal-800\/90 *):not(div.bg-charcoal-800\/80 *):not(.group.relative.bg-charcoal-900 *),
+html:not(.dark) h5:not(.dark-surface *):not(.stat-card *):not(.feature-card *):not(.mission-vision-card *):not(.industrial-cta-box *):not(.hero-banner *):not(#home-1-hero *):not(#home-2-hero *):not(section.bg-charcoal-950 *):not(section.bg-charcoal-900 *):not(div.bg-charcoal-950 *):not(div.bg-charcoal-900:not(.modal-container):not(.auth-card-light) *):not(div.bg-charcoal-800 *):not(div.bg-charcoal-800\/90 *):not(div.bg-charcoal-800\/80 *):not(.group.relative.bg-charcoal-900 *),
+html:not(.dark) h6:not(.dark-surface *):not(.stat-card *):not(.feature-card *):not(.mission-vision-card *):not(.industrial-cta-box *):not(.hero-banner *):not(#home-1-hero *):not(#home-2-hero *):not(section.bg-charcoal-950 *):not(section.bg-charcoal-900 *):not(div.bg-charcoal-950 *):not(div.bg-charcoal-900:not(.modal-container):not(.auth-card-light) *):not(div.bg-charcoal-800 *):not(div.bg-charcoal-800\/90 *):not(div.bg-charcoal-800\/80 *):not(.group.relative.bg-charcoal-900 *),
+html:not(.dark) .font-heading:not(.dark-surface *):not(.stat-card *):not(.feature-card *):not(.mission-vision-card *):not(.industrial-cta-box *):not(.hero-banner *):not(#home-1-hero *):not(#home-2-hero *):not(section.bg-charcoal-950 *):not(section.bg-charcoal-900 *):not(div.bg-charcoal-950 *):not(div.bg-charcoal-900:not(.modal-container):not(.auth-card-light) *):not(div.bg-charcoal-800 *):not(div.bg-charcoal-800\/90 *):not(div.bg-charcoal-800\/80 *):not(.group.relative.bg-charcoal-900 *):not(.process-step-badge):not(.process-step-badge *):not(.process-step-number),
+html.light h1:not(.dark-surface *):not(.stat-card *):not(.feature-card *):not(.mission-vision-card *):not(.industrial-cta-box *):not(.hero-banner *):not(#home-1-hero *):not(#home-2-hero *):not(section.bg-charcoal-950 *):not(section.bg-charcoal-900 *):not(div.bg-charcoal-950 *):not(div.bg-charcoal-900:not(.modal-container):not(.auth-card-light) *):not(div.bg-charcoal-800 *):not(div.bg-charcoal-800\/90 *):not(div.bg-charcoal-800\/80 *):not(.group.relative.bg-charcoal-900 *),
+html.light h2:not(.dark-surface *):not(.stat-card *):not(.feature-card *):not(.mission-vision-card *):not(.industrial-cta-box *):not(.hero-banner *):not(#home-1-hero *):not(#home-2-hero *):not(section.bg-charcoal-950 *):not(section.bg-charcoal-900 *):not(div.bg-charcoal-950 *):not(div.bg-charcoal-900:not(.modal-container):not(.auth-card-light) *):not(div.bg-charcoal-800 *):not(div.bg-charcoal-800\/90 *):not(div.bg-charcoal-800\/80 *):not(.group.relative.bg-charcoal-900 *),
+html.light h3:not(.dark-surface *):not(.stat-card *):not(.feature-card *):not(.mission-vision-card *):not(.industrial-cta-box *):not(.hero-banner *):not(#home-1-hero *):not(#home-2-hero *):not(section.bg-charcoal-950 *):not(section.bg-charcoal-900 *):not(div.bg-charcoal-950 *):not(div.bg-charcoal-900:not(.modal-container):not(.auth-card-light) *):not(div.bg-charcoal-800 *):not(div.bg-charcoal-800\/90 *):not(div.bg-charcoal-800\/80 *):not(.group.relative.bg-charcoal-900 *),
+html.light h4:not(.dark-surface *):not(.stat-card *):not(.feature-card *):not(.mission-vision-card *):not(.industrial-cta-box *):not(.hero-banner *):not(#home-1-hero *):not(#home-2-hero *):not(section.bg-charcoal-950 *):not(section.bg-charcoal-900 *):not(div.bg-charcoal-950 *):not(div.bg-charcoal-900:not(.modal-container):not(.auth-card-light) *):not(div.bg-charcoal-800 *):not(div.bg-charcoal-800\/90 *):not(div.bg-charcoal-800\/80 *):not(.group.relative.bg-charcoal-900 *),
+html.light h5:not(.dark-surface *):not(.stat-card *):not(.feature-card *):not(.mission-vision-card *):not(.industrial-cta-box *):not(.hero-banner *):not(#home-1-hero *):not(#home-2-hero *):not(section.bg-charcoal-950 *):not(section.bg-charcoal-900 *):not(div.bg-charcoal-950 *):not(div.bg-charcoal-900:not(.modal-container):not(.auth-card-light) *):not(div.bg-charcoal-800 *):not(div.bg-charcoal-800\/90 *):not(div.bg-charcoal-800\/80 *):not(.group.relative.bg-charcoal-900 *),
+html.light h6:not(.dark-surface *):not(.stat-card *):not(.feature-card *):not(.mission-vision-card *):not(.industrial-cta-box *):not(.hero-banner *):not(#home-1-hero *):not(#home-2-hero *):not(section.bg-charcoal-950 *):not(section.bg-charcoal-900 *):not(div.bg-charcoal-950 *):not(div.bg-charcoal-900:not(.modal-container):not(.auth-card-light) *):not(div.bg-charcoal-800 *):not(div.bg-charcoal-800\/90 *):not(div.bg-charcoal-800\/80 *):not(.group.relative.bg-charcoal-900 *),
+html.light .font-heading:not(.dark-surface *):not(.stat-card *):not(.feature-card *):not(.mission-vision-card *):not(.industrial-cta-box *):not(.hero-banner *):not(#home-1-hero *):not(#home-2-hero *):not(section.bg-charcoal-950 *):not(section.bg-charcoal-900 *):not(div.bg-charcoal-950 *):not(div.bg-charcoal-900:not(.modal-container):not(.auth-card-light) *):not(div.bg-charcoal-800 *):not(div.bg-charcoal-800\/90 *):not(div.bg-charcoal-800\/80 *):not(.group.relative.bg-charcoal-900 *):not(.process-step-badge):not(.process-step-badge *):not(.process-step-number) {
+  color: #111827 !important;
+}
+
+/* Secondary & Muted Text on Light Surfaces */
+html:not(.dark) section.bg-white p,
+html:not(.dark) section.bg-warm-white p,
+html:not(.dark) section.bg-concrete-100 p,
+html:not(.dark) div.bg-white p,
+html:not(.dark) div.bg-warm-white p,
+html.light section.bg-white p,
+html.light section.bg-warm-white p,
+html.light section.bg-concrete-100 p,
+html.light div.bg-white p,
+html.light div.bg-warm-white p {
+  color: #374151 !important;
+}
+
+html:not(.dark) section.bg-white .text-gray-600,
+html:not(.dark) section.bg-warm-white .text-gray-600,
+html:not(.dark) section.bg-concrete-100 .text-gray-600,
+html.light section.bg-white .text-gray-600,
+html.light section.bg-warm-white .text-gray-600,
+html.light section.bg-concrete-100 .text-gray-600 {
+  color: #4B5563 !important;
+}
+
+html:not(.dark) section.bg-white .text-gray-500,
+html:not(.dark) section.bg-warm-white .text-gray-500,
+html:not(.dark) section.bg-concrete-100 .text-gray-500,
+html.light section.bg-white .text-gray-500,
+html.light section.bg-warm-white .text-gray-500,
+html.light section.bg-concrete-100 .text-gray-500 {
+  color: #64748B !important;
+}
+
+/* Product Cards in Light Mode */
+html:not(.dark) .product-card,
+html.light .product-card {
+  background-color: #FFFFFF !important;
+  border: 1px solid #D1D5DB !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06) !important;
+}
+
+html:not(.dark) .product-card:hover,
+html.light .product-card:hover {
+  border-color: #C83B25 !important;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not(.dark) .product-card h3,
+html.light .product-card h3 {
+  color: #111827 !important;
+}
+
+html:not(.dark) .product-card p,
+html.light .product-card p {
+  color: #4B5563 !important;
+}
+
+html:not(.dark) .product-card .spec-tag,
+html.light .product-card .spec-tag {
+  background-color: #F4F5F6 !important;
+  color: #171C26 !important;
+  border-left: 3px solid #C83B25 !important;
+}
+
+/* Light Mode Borders */
+html:not(.dark) .border-gray-100,
+html:not(.dark) .border-gray-200,
+html:not(.dark) .border-gray-300,
+html:not(.dark) .border-concrete-200,
+html.light .border-gray-100,
+html.light .border-gray-200,
+html.light .border-gray-300,
+html.light .border-concrete-200 {
+  border-color: #D1D5DB !important;
+}
+
+/* Light Mode Global Form Inputs, Labels & Placeholders */
+html:not(.dark) input:not([type="checkbox"]):not([type="radio"]),
+html:not(.dark) select,
+html:not(.dark) textarea,
+html.light input:not([type="checkbox"]):not([type="radio"]),
+html.light select,
+html.light textarea {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+  border: 1px solid #D1D5DB !important;
+}
+
+html:not(.dark) input:focus,
+html:not(.dark) select:focus,
+html:not(.dark) textarea:focus,
+html.light input:focus,
+html.light select:focus,
+html.light textarea:focus {
+  border-color: #C83B25 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(200, 59, 37, 0.2) !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder,
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #9CA3AF !important;
+}
+
+html:not(.dark) label,
+html.light label {
+  color: #4B5563 !important;
+}
+
+/* Light Mode Tables */
+html:not(.dark) table,
+html.light table {
+  border-color: #D1D5DB !important;
+}
+html:not(.dark) table th,
+html.light table th {
+  background-color: #F4F5F6 !important;
+  color: #111827 !important;
+  border-color: #D1D5DB !important;
+}
+html:not(.dark) table td,
+html.light table td {
+  border-color: #D1D5DB !important;
+  color: #171C26 !important;
+}
+html:not(.dark) table tr:hover td,
+html.light table tr:hover td {
+  background-color: #F4F5F6 !important;
+}
+html:not(.dark) table td .text-gray-400,
+html.light table td .text-gray-400 {
+  color: #64748B !important;
+}
+
+/* Light Mode FAQ Accordion */
+html:not(.dark) .faq-item,
+html.light .faq-item {
+  background-color: #FFFFFF !important;
+  border: 1px solid #D1D5DB !important;
+}
+html:not(.dark) .faq-item button,
+html:not(.dark) .faq-item button span,
+html.light .faq-item button,
+html.light .faq-item button span {
+  color: #111827 !important;
+}
+html:not(.dark) .faq-answer,
+html.light .faq-answer {
+  color: #4B5563 !important;
+}
+
+
+/* Header & Navbar in Light Mode */
+html:not(.dark) header.site-header,
+html:not(.dark) header.bg-charcoal-900,
+html.light header.site-header,
+html.light header.bg-charcoal-900 {
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid #D1D5DB !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06) !important;
+}
+
+html:not(.dark) header.site-header.scrolled,
+html.light header.site-header.scrolled {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08) !important;
+}
+
+html:not(.dark) header.site-header a .text-white,
+html:not(.dark) header.bg-charcoal-900 a .text-white,
+html.light header.site-header a .text-white,
+html.light header.bg-charcoal-900 a .text-white {
+  color: #111827 !important;
+}
+
+html:not(.dark) header.site-header a .text-concrete-300,
+html:not(.dark) header.site-header a .text-concrete-400,
+html.light header.site-header a .text-concrete-300,
+html.light header.site-header a .text-concrete-400 {
+  color: #64748B !important;
+}
+
+html:not(.dark) .nav-link-item,
+html.light .nav-link-item {
+  color: #171C26 !important;
+}
+
+html:not(.dark) .nav-link-item:hover,
+html.light .nav-link-item:hover {
+  color: #C83B25 !important;
+}
+
+html:not(.dark) .nav-link-item.text-brick-red,
+html.light .nav-link-item.text-brick-red {
+  color: #C83B25 !important;
+}
+
+html:not(.dark) .nav-link-item i.fa-chevron-down,
+html.light .nav-link-item i.fa-chevron-down {
+  color: #64748B !important;
+}
+
+/* Nav Dropdown in Light Mode */
+html:not(.dark) .nav-dropdown,
+html.light .nav-dropdown {
+  background-color: #FFFFFF !important;
+  border: 1px solid #D1D5DB !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) .nav-dropdown a,
+html.light .nav-dropdown a {
+  color: #171C26 !important;
+  background-color: transparent !important;
+}
+
+html:not(.dark) .nav-dropdown a:hover,
+html.light .nav-dropdown a:hover {
+  background-color: #F4F5F6 !important;
+  color: #C83B25 !important;
+}
+
+html:not(.dark) .nav-dropdown .border-charcoal-800,
+html.light .nav-dropdown .border-charcoal-800 {
+  border-color: #D1D5DB !important;
+  color: #111827 !important;
+}
+
+/* Direction & Theme Switchers in Light Mode */
+html:not(.dark) .navbar-dir-switch,
+html:not(.dark) .navbar-theme-switch,
+html.light .navbar-dir-switch,
+html.light .navbar-theme-switch {
+  background-color: #F4F5F6 !important;
+  border: 1px solid #D1D5DB !important;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .dir-opt-btn,
+html:not(.dark) .theme-opt-btn,
+html.light .dir-opt-btn,
+html.light .theme-opt-btn {
+  color: #64748B !important;
+}
+
+html:not(.dark) .dir-opt-btn:hover,
+html:not(.dark) .theme-opt-btn:hover,
+html.light .dir-opt-btn:hover,
+html.light .theme-opt-btn:hover {
+  color: #111827 !important;
+}
+
+html:not(.dark) .dir-opt-btn.active,
+html.light .dir-opt-btn.active {
+  background-color: #C83B25 !important;
+  color: #FFFFFF !important;
+}
+
+html:not(.dark) .theme-opt-btn.active,
+html.light .theme-opt-btn.active {
+  background-color: #EA580C !important;
+  color: #FFFFFF !important;
+}
+
+html:not(.dark) #mobile-menu-toggle,
+html.light #mobile-menu-toggle {
+  color: #171C26 !important;
+}
+
+/* Mobile Off-Canvas Drawer in Light Mode */
+html:not(.dark) #mobile-drawer,
+html.light #mobile-drawer {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+  border-left: 1px solid #D1D5DB !important;
+}
+
+html:not(.dark) #mobile-drawer .border-charcoal-800,
+html:not(.dark) #mobile-drawer .border-charcoal-700,
+html.light #mobile-drawer .border-charcoal-800,
+html.light #mobile-drawer .border-charcoal-700 {
+  border-color: #D1D5DB !important;
+}
+
+html:not(.dark) #mobile-drawer span.text-white,
+html.light #mobile-drawer span.text-white {
+  color: #111827 !important;
+}
+
+html:not(.dark) #mobile-drawer button#mobile-menu-close,
+html.light #mobile-drawer button#mobile-menu-close {
+  color: #4B5563 !important;
+}
+
+html:not(.dark) #mobile-drawer nav a,
+html.light #mobile-drawer nav a {
+  color: #171C26 !important;
+  border-bottom: 1px solid #F4F5F6 !important;
+}
+
+html:not(.dark) #mobile-drawer nav a:hover,
+html.light #mobile-drawer nav a:hover {
+  background-color: #F4F5F6 !important;
+  color: #C83B25 !important;
+}
+
+html:not(.dark) #mobile-drawer nav a.bg-charcoal-800,
+html.light #mobile-drawer nav a.bg-charcoal-800 {
+  background-color: #F4F5F6 !important;
+  color: #C83B25 !important;
+}
+
+html:not(.dark) #mobile-drawer .bg-charcoal-950,
+html.light #mobile-drawer .bg-charcoal-950 {
+  background-color: #F4F5F6 !important;
+  border-top: 1px solid #D1D5DB !important;
+  color: #4B5563 !important;
+}
+
+html:not(.dark) #mobile-drawer .bg-charcoal-950 .text-white,
+html.light #mobile-drawer .bg-charcoal-950 .text-white {
+  color: #111827 !important;
+}
+
+html:not(.dark) #mobile-drawer .bg-charcoal-800/80,
+html.light #mobile-drawer .bg-charcoal-800/80 {
+  background-color: #F4F5F6 !important;
+  border-color: #D1D5DB !important;
+}
+
+/* ==========================================================================
+   FOOTER IN LIGHT MODE (HIGHEST PRIORITY)
+   Zero white-on-white text, dark charcoal headings, crisp borders
+   ========================================================================== */
+html:not(.dark) footer,
+html:not(.dark) .site-footer,
+html.light footer,
+html.light .site-footer {
+  background-color: #F4F5F6 !important;
+  color: #4B5563 !important;
+  border-top: 1px solid #D1D5DB !important;
+}
+
+/* Footer Headings */
+html:not(.dark) footer h1,
+html:not(.dark) footer h2,
+html:not(.dark) footer h3,
+html:not(.dark) footer h4,
+html:not(.dark) footer h5,
+html:not(.dark) footer h6,
+html:not(.dark) footer .font-heading,
+html:not(.dark) footer .text-white,
+html.light footer h1,
+html.light footer h2,
+html.light footer h3,
+html.light footer h4,
+html.light footer h5,
+html.light footer h6,
+html.light footer .font-heading,
+html.light footer .text-white {
+  color: #111827 !important;
+}
+
+/* Footer Description & Paragraphs */
+html:not(.dark) footer p,
+html:not(.dark) footer .text-concrete-400,
+html:not(.dark) footer .text-concrete-300,
+html:not(.dark) footer .text-gray-400,
+html:not(.dark) footer .text-gray-300,
+html.light footer p,
+html.light footer .text-concrete-400,
+html.light footer .text-concrete-300,
+html.light footer .text-gray-400,
+html.light footer .text-gray-300 {
+  color: #4B5563 !important;
+}
+
+/* Footer Navigation Links */
+html:not(.dark) footer a:not(.btn-brick):not(.btn-orange):not(.btn-outline-concrete),
+html.light footer a:not(.btn-brick):not(.btn-orange):not(.btn-outline-concrete) {
+  color: #171C26 !important;
+}
+
+html:not(.dark) footer a:not(.btn-brick):not(.btn-orange):not(.btn-outline-concrete):hover,
+html.light footer a:not(.btn-brick):not(.btn-orange):not(.btn-outline-concrete):hover {
+  color: #C83B25 !important;
+}
+
+/* Footer Copyright & Muted */
+html:not(.dark) footer .text-concrete-500,
+html:not(.dark) footer .text-gray-500,
+html.light footer .text-concrete-500,
+html.light footer .text-gray-500 {
+  color: #64748B !important;
+}
+
+/* Footer Dividers */
+html:not(.dark) footer .border-charcoal-800,
+html:not(.dark) footer .border-charcoal-700,
+html.light footer .border-charcoal-800,
+html.light footer .border-charcoal-700 {
+  border-color: #D1D5DB !important;
+}
+
+/* Footer Button 1: Sign In to Portal (White text on brick-red background) */
+html:not(.dark) footer .btn-orange,
+html:not(.dark) footer a[href*="login"].btn-orange,
+html.light footer .btn-orange,
+html.light footer a[href*="login"].btn-orange {
+  background-color: #C83B25 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #C83B25 !important;
+}
+
+html:not(.dark) footer .btn-orange:hover,
+html:not(.dark) footer a[href*="login"].btn-orange:hover,
+html.light footer .btn-orange:hover,
+html.light footer a[href*="login"].btn-orange:hover {
+  background-color: #9C2E1B !important;
+  border-color: #9C2E1B !important;
+  color: #FFFFFF !important;
+}
+
+/* Footer Button 2: Register Wholesale Account (Dark text with visible border on white bg) */
+html:not(.dark) footer .btn-outline-concrete,
+html:not(.dark) footer a[href*="register"].btn-outline-concrete,
+html.light footer .btn-outline-concrete,
+html.light footer a[href*="register"].btn-outline-concrete {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+  border: 1.5px solid #D1D5DB !important;
+}
+
+html:not(.dark) footer .btn-outline-concrete:hover,
+html:not(.dark) footer a[href*="register"].btn-outline-concrete:hover,
+html.light footer .btn-outline-concrete:hover,
+html.light footer a[href*="register"].btn-outline-concrete:hover {
+  background-color: #111827 !important;
+  color: #FFFFFF !important;
+  border-color: #111827 !important;
+}
+
+/* Footer Newsletter Input */
+html:not(.dark) footer input,
+html.light footer input {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+  border: 1px solid #D1D5DB !important;
+}
+html:not(.dark) footer input::placeholder,
+html.light footer input::placeholder {
+  color: #9CA3AF !important;
+}
+
+/* Footer Social Media Buttons */
+html:not(.dark) footer .bg-charcoal-800.text-gray-300,
+html.light footer .bg-charcoal-800.text-gray-300 {
+  background-color: #E5E7EB !important;
+  color: #171C26 !important;
+}
+html:not(.dark) footer .bg-charcoal-800.text-gray-300:hover,
+html.light footer .bg-charcoal-800.text-gray-300:hover {
+  background-color: #C83B25 !important;
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   PAGE HERO BANNERS, STATISTICS, FEATURE CARDS & DARK SURFACES
+   Comprehensive fix: All dark-background components retain pure white text (#FFFFFF)
+   and light-grey descriptions (#E5E7EB / #CBD5E1) in BOTH Light and Dark modes.
+   ========================================================================== */
+
+/* 1. Statistics Cards (Screenshot 1: Track Record, Annual Capacity, Supply Reach, Commercial Network) */
+.stat-card,
+div.stat-card,
+html:not(.dark) .stat-card,
+html.light .stat-card {
+  background-color: #121316 !important;
+  border: 1px solid #2B2F36 !important;
+  border-bottom: 4px solid var(--brick-red) !important;
+}
+.stat-card:hover,
+html:not(.dark) .stat-card:hover,
+html.light .stat-card:hover {
+  border-bottom-color: var(--industrial-orange) !important;
+  transform: translateY(-4px) !important;
+}
+.stat-card .stat-counter,
+.stat-card .text-4xl,
+.stat-card .text-5xl,
+.stat-card .font-heading,
+html:not(.dark) .stat-card .stat-counter,
+html:not(.dark) .stat-card .text-4xl,
+html:not(.dark) .stat-card .text-5xl,
+html:not(.dark) .stat-card .font-heading,
+html.light .stat-card .stat-counter,
+html.light .stat-card .text-4xl,
+html.light .stat-card .text-5xl,
+html.light .stat-card .font-heading {
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+}
+.stat-card .font-mono,
+.stat-card .text-concrete-400,
+html:not(.dark) .stat-card .font-mono,
+html:not(.dark) .stat-card .text-concrete-400,
+html.light .stat-card .font-mono,
+html.light .stat-card .text-concrete-400 {
+  color: #CBD5E1 !important;
+  font-size: 11px !important;
+  letter-spacing: 0.1em !important;
+}
+.stat-card .text-sm,
+.stat-card .text-gray-300,
+html:not(.dark) .stat-card .text-sm,
+html:not(.dark) .stat-card .text-gray-300,
+html.light .stat-card .text-sm,
+html.light .stat-card .text-gray-300 {
+  color: #E5E7EB !important;
+}
+
+/* 2. Feature & Benefits Cards (Screenshot 2: High Compressive Strength, 4-Hour Fire Resistance, Low Water Absorption, Acoustic & Thermal Shield) */
+.feature-card,
+div.feature-card,
+div.bg-charcoal-800\/90,
+html:not(.dark) .feature-card,
+html:not(.dark) div.bg-charcoal-800\/90,
+html.light .feature-card,
+html.light div.bg-charcoal-800\/90 {
+  background-color: #1E2126 !important;
+  border: 1px solid #2B2F36 !important;
+}
+.feature-card h3,
+div.bg-charcoal-800\/90 h3,
+html:not(.dark) .feature-card h3,
+html:not(.dark) div.bg-charcoal-800\/90 h3,
+html.light .feature-card h3,
+html.light div.bg-charcoal-800\/90 h3 {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+.feature-card p,
+div.bg-charcoal-800\/90 p,
+html:not(.dark) .feature-card p,
+html:not(.dark) div.bg-charcoal-800\/90 p,
+html.light .feature-card p,
+html.light div.bg-charcoal-800\/90 p {
+  color: #E5E7EB !important;
+}
+.feature-card .font-mono,
+.feature-card .border-t,
+div.bg-charcoal-800\/90 .font-mono,
+div.bg-charcoal-800\/90 .border-t,
+html:not(.dark) .feature-card .font-mono,
+html:not(.dark) div.bg-charcoal-800\/90 .font-mono,
+html.light .feature-card .font-mono,
+html.light div.bg-charcoal-800\/90 .font-mono {
+  color: #CBD5E1 !important;
+  border-color: #374151 !important;
+}
+
+/* 3. CTA Sections (Screenshot 3: Direct Factory Dispatch Hotline, Ready to Build, All Pages) */
+.industrial-cta-box,
+html:not(.dark) .industrial-cta-box,
+html.light .industrial-cta-box {
+  background-color: #34373B !important;
+  border: 1px solid #4B5563 !important;
+}
+.industrial-cta-box .cta-label,
+html:not(.dark) .industrial-cta-box .cta-label,
+html.light .industrial-cta-box .cta-label {
+  color: #FF8A36 !important;
+}
+.industrial-cta-box .cta-label i,
+html:not(.dark) .industrial-cta-box .cta-label i,
+html.light .industrial-cta-box .cta-label i {
+  color: #FF7135 !important;
+}
+.industrial-cta-box .cta-heading,
+.industrial-cta-box h2,
+.industrial-cta-box h3,
+html:not(.dark) .industrial-cta-box .cta-heading,
+html:not(.dark) .industrial-cta-box h2,
+html:not(.dark) .industrial-cta-box h3,
+html.light .industrial-cta-box .cta-heading,
+html.light .industrial-cta-box h2,
+html.light .industrial-cta-box h3 {
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+}
+.industrial-cta-box .cta-desc,
+.industrial-cta-box p,
+html:not(.dark) .industrial-cta-box .cta-desc,
+html:not(.dark) .industrial-cta-box p,
+html.light .industrial-cta-box .cta-desc,
+html.light .industrial-cta-box p {
+  color: #E2E5E9 !important;
+}
+.industrial-cta-box .cta-perk-item,
+.industrial-cta-box .cta-perk-item span,
+html:not(.dark) .industrial-cta-box .cta-perk-item,
+html:not(.dark) .industrial-cta-box .cta-perk-item span,
+html.light .industrial-cta-box .cta-perk-item,
+html.light .industrial-cta-box .cta-perk-item span {
+  color: #FFFFFF !important;
+}
+.industrial-cta-box .cta-perk-item i,
+html:not(.dark) .industrial-cta-box .cta-perk-item i,
+html.light .industrial-cta-box .cta-perk-item i {
+  color: #20C997 !important;
+}
+.industrial-cta-box .cta-btn-primary,
+html:not(.dark) .industrial-cta-box .cta-btn-primary,
+html.light .industrial-cta-box .cta-btn-primary {
+  background-color: #C83B25 !important;
+  color: #FFFFFF !important;
+  border-color: #C83B25 !important;
+}
+.industrial-cta-box .cta-btn-secondary,
+html:not(.dark) .industrial-cta-box .cta-btn-secondary,
+html.light .industrial-cta-box .cta-btn-secondary {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+  border-color: #FFFFFF !important;
+}
+
+/* 4. Hero Sections Across All Pages (Screenshot 4: Home 1, Home 2, About, Subpages) */
+#home-1-hero,
+#home-2-hero,
+.hero-banner,
+section.subpage-hero,
+section.bg-charcoal-950:has(h1),
+section.bg-charcoal-900:has(h1),
+html:not(.dark) #home-1-hero,
+html:not(.dark) #home-2-hero,
+html:not(.dark) .hero-banner,
+html:not(.dark) section.subpage-hero,
+html:not(.dark) section.bg-charcoal-950:has(h1),
+html:not(.dark) section.bg-charcoal-900:has(h1),
+html.light #home-1-hero,
+html.light #home-2-hero,
+html.light .hero-banner,
+html.light section.subpage-hero,
+html.light section.bg-charcoal-950:has(h1),
+html.light section.bg-charcoal-900:has(h1) {
+  background-color: #0A0B0D !important;
+  border-bottom: 1px solid #2B2F36 !important;
+}
+
+#home-1-hero h1, #home-2-hero h1, .hero-banner h1, section.subpage-hero h1,
+section.bg-charcoal-950:has(h1) h1, section.bg-charcoal-900:has(h1) h1,
+html:not(.dark) #home-1-hero h1, html:not(.dark) #home-2-hero h1, html:not(.dark) .hero-banner h1,
+html:not(.dark) section.subpage-hero h1, html:not(.dark) section.bg-charcoal-950:has(h1) h1, html:not(.dark) section.bg-charcoal-900:has(h1) h1,
+html.light #home-1-hero h1, html.light #home-2-hero h1, html.light .hero-banner h1,
+html.light section.subpage-hero h1, html.light section.bg-charcoal-950:has(h1) h1, html.light section.bg-charcoal-900:has(h1) h1 {
+  color: #FFFFFF !important;
+}
+
+#home-1-hero p, #home-2-hero p, .hero-banner p, section.subpage-hero p,
+section.bg-charcoal-950:has(h1) p, section.bg-charcoal-900:has(h1) p,
+html:not(.dark) #home-1-hero p, html:not(.dark) #home-2-hero p, html:not(.dark) .hero-banner p,
+html:not(.dark) section.subpage-hero p, html:not(.dark) section.bg-charcoal-950:has(h1) p, html:not(.dark) section.bg-charcoal-900:has(h1) p,
+html.light #home-1-hero p, html.light #home-2-hero p, html.light .hero-banner p,
+html.light section.subpage-hero p, html.light section.bg-charcoal-950:has(h1) p, html.light section.bg-charcoal-900:has(h1) p {
+  color: #E5E7EB !important;
+}
+
+#home-1-hero .text-concrete-300, #home-2-hero .text-concrete-300, .hero-banner .text-concrete-300,
+html:not(.dark) #home-1-hero .text-concrete-300, html:not(.dark) #home-2-hero .text-concrete-300,
+html:not(.dark) .hero-banner .text-concrete-300, html.light .hero-banner .text-concrete-300 {
+  color: #CBD5E1 !important;
+}
+
+#home-1-hero .btn-outline-concrete, #home-2-hero .btn-outline-concrete, .hero-banner .btn-outline-concrete,
+html:not(.dark) #home-1-hero .btn-outline-concrete, html:not(.dark) #home-2-hero .btn-outline-concrete,
+html:not(.dark) .hero-banner .btn-outline-concrete,
+html.light #home-1-hero .btn-outline-concrete, html.light #home-2-hero .btn-outline-concrete,
+html.light .hero-banner .btn-outline-concrete {
+  background-color: transparent !important;
+  color: #FFFFFF !important;
+  border: 2px solid rgba(255, 255, 255, 0.6) !important;
+}
+#home-1-hero .btn-outline-concrete:hover, #home-2-hero .btn-outline-concrete:hover, .hero-banner .btn-outline-concrete:hover,
+html:not(.dark) #home-1-hero .btn-outline-concrete:hover, html:not(.dark) #home-2-hero .btn-outline-concrete:hover,
+html:not(.dark) .hero-banner .btn-outline-concrete:hover,
+html.light #home-1-hero .btn-outline-concrete:hover, html.light #home-2-hero .btn-outline-concrete:hover,
+html.light .hero-banner .btn-outline-concrete:hover {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+  border-color: #FFFFFF !important;
+}
+
+/* Material selector inside Home 2 Hero */
+#home-2-hero .bg-charcoal-800\/90,
+html:not(.dark) #home-2-hero .bg-charcoal-800\/90,
+html.light #home-2-hero .bg-charcoal-800\/90 {
+  background-color: #1E2126 !important;
+  border: 1px solid #2B2F36 !important;
+}
+#home-2-hero select,
+html:not(.dark) #home-2-hero select,
+html.light #home-2-hero select {
+  background-color: #121316 !important;
+  color: #FFFFFF !important;
+  border: 1px solid #374151 !important;
+}
+
+/* 5. Mission & Vision Cards (Screenshot 5: OUR MISSION, OUR VISION in about.html) */
+.mission-vision-card,
+div.mission-vision-card,
+div.bg-charcoal-900.rounded-xl,
+html:not(.dark) .mission-vision-card,
+html:not(.dark) div.bg-charcoal-900.rounded-xl,
+html.light .mission-vision-card,
+html.light div.bg-charcoal-900.rounded-xl {
+  background-color: #121316 !important;
+  border: 1px solid #2B2F36 !important;
+}
+.mission-vision-card h3,
+div.bg-charcoal-900.rounded-xl h3,
+html:not(.dark) .mission-vision-card h3,
+html:not(.dark) div.bg-charcoal-900.rounded-xl h3,
+html.light .mission-vision-card h3,
+html.light div.bg-charcoal-900.rounded-xl h3 {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+.mission-vision-card p,
+div.bg-charcoal-900.rounded-xl p,
+html:not(.dark) .mission-vision-card p,
+html:not(.dark) div.bg-charcoal-900.rounded-xl p,
+html.light .mission-vision-card p,
+html.light div.bg-charcoal-900.rounded-xl p {
+  color: #E5E7EB !important;
+}
+
+/* 6. Quality Assurance & Certification Badges (index.html & about.html) */
+section.bg-charcoal-950.border-t.border-b,
+html:not(.dark) section.bg-charcoal-950.border-t.border-b,
+html.light section.bg-charcoal-950.border-t.border-b {
+  background-color: #0A0B0D !important;
+  border-color: #2B2F36 !important;
+}
+section.bg-charcoal-950.border-t.border-b h2,
+html:not(.dark) section.bg-charcoal-950.border-t.border-b h2,
+html.light section.bg-charcoal-950.border-t.border-b h2 {
+  color: #FFFFFF !important;
+}
+section.bg-charcoal-950.border-t.border-b p,
+html:not(.dark) section.bg-charcoal-950.border-t.border-b p,
+html.light section.bg-charcoal-950.border-t.border-b p {
+  color: #CBD5E1 !important;
+}
+section.bg-charcoal-950.border-t.border-b .bg-charcoal-900,
+html:not(.dark) section.bg-charcoal-950.border-t.border-b .bg-charcoal-900,
+html.light section.bg-charcoal-950.border-t.border-b .bg-charcoal-900 {
+  background-color: #121316 !important;
+  border: 1px solid #2B2F36 !important;
+}
+section.bg-charcoal-950.border-t.border-b .bg-charcoal-900 .font-heading,
+html:not(.dark) section.bg-charcoal-950.border-t.border-b .bg-charcoal-900 .font-heading,
+html.light section.bg-charcoal-950.border-t.border-b .bg-charcoal-900 .font-heading {
+  color: #FFFFFF !important;
+}
+section.bg-charcoal-950.border-t.border-b .bg-charcoal-900 .text-orange-400,
+html:not(.dark) section.bg-charcoal-950.border-t.border-b .bg-charcoal-900 .text-orange-400,
+html.light section.bg-charcoal-950.border-t.border-b .bg-charcoal-900 .text-orange-400 {
+  color: #F97316 !important;
+}
+section.bg-charcoal-950.border-t.border-b .bg-charcoal-900 .font-mono,
+html:not(.dark) section.bg-charcoal-950.border-t.border-b .bg-charcoal-900 .font-mono,
+html.light section.bg-charcoal-950.border-t.border-b .bg-charcoal-900 .font-mono {
+  color: #CBD5E1 !important;
+}
+
+/* 7. Construction Projects Showcase Cards */
+.group.relative.bg-charcoal-900 h3,
+html:not(.dark) .group.relative.bg-charcoal-900 h3,
+html.light .group.relative.bg-charcoal-900 h3 {
+  color: #FFFFFF !important;
+}
+
+/* Interactive Calculator Container in Light Mode */
+html:not(.dark) .bg-charcoal-900.rounded-2xl,
+html.light .bg-charcoal-900.rounded-2xl {
+  background-color: #F4F5F6 !important;
+  border: 1px solid #D1D5DB !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .bg-charcoal-900.rounded-2xl h2,
+html.light .bg-charcoal-900.rounded-2xl h2 {
+  color: #111827 !important;
+}
+
+html:not(.dark) .bg-charcoal-900.rounded-2xl p,
+html.light .bg-charcoal-900.rounded-2xl p {
+  color: #4B5563 !important;
+}
+
+html:not(.dark) .bg-charcoal-900.rounded-2xl label,
+html.light .bg-charcoal-900.rounded-2xl label {
+  color: #4B5563 !important;
+}
+
+html:not(.dark) .bg-charcoal-900.rounded-2xl select,
+html:not(.dark) .bg-charcoal-900.rounded-2xl input,
+html.light .bg-charcoal-900.rounded-2xl select,
+html.light .bg-charcoal-900.rounded-2xl input {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+  border: 1px solid #D1D5DB !important;
+}
+
+html:not(.dark) .bg-charcoal-900.rounded-2xl .bg-charcoal-950,
+html.light .bg-charcoal-900.rounded-2xl .bg-charcoal-950 {
+  background-color: #FFFFFF !important;
+  border: 1px solid #D1D5DB !important;
+}
+
+html:not(.dark) .bg-charcoal-900.rounded-2xl .border-charcoal-800,
+html.light .bg-charcoal-900.rounded-2xl .border-charcoal-800 {
+  border-color: #D1D5DB !important;
+}
+
+html:not(.dark) #calc-result-units,
+html.light #calc-result-units {
+  color: #111827 !important;
+}
+
+html:not(.dark) #calc-result-cost,
+html.light #calc-result-cost {
+  color: #C83B25 !important;
+}
+
+/* Modals in Light Mode */
+html:not(.dark) .modal-container,
+html.light .modal-container {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+  border: 1px solid #D1D5DB !important;
+}
+
+html:not(.dark) .modal-container .bg-charcoal-950,
+html:not(.dark) .modal-container .bg-charcoal-900,
+html.light .modal-container .bg-charcoal-950,
+html.light .modal-container .bg-charcoal-900 {
+  background-color: #F4F5F6 !important;
+  border-bottom: 1px solid #D1D5DB !important;
+  color: #111827 !important;
+}
+
+html:not(.dark) .modal-container h3,
+html.light .modal-container h3 {
+  color: #111827 !important;
+}
+
+html:not(.dark) .modal-container button[data-close-modal],
+html.light .modal-container button[data-close-modal] {
+  color: #4B5563 !important;
+}
+
+html:not(.dark) .modal-container label,
+html.light .modal-container label {
+  color: #4B5563 !important;
+}
+
+html:not(.dark) .modal-container input,
+html:not(.dark) .modal-container select,
+html:not(.dark) .modal-container textarea,
+html.light .modal-container input,
+html.light .modal-container select,
+html.light .modal-container textarea {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+  border: 1px solid #D1D5DB !important;
+}
+
+html:not(.dark) .modal-container input::placeholder,
+html:not(.dark) .modal-container textarea::placeholder,
+html.light .modal-container input::placeholder,
+html.light .modal-container textarea::placeholder {
+  color: #9CA3AF !important;
+}
+
+/* Auth Cards (Login & Register & 404) in Light Mode */
+html:not(.dark) main .bg-charcoal-900,
+html.light main .bg-charcoal-900 {
+  background-color: #FFFFFF !important;
+  border: 1px solid #D1D5DB !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+}
+
+html:not(.dark) main .bg-charcoal-900 h1,
+html.light main .bg-charcoal-900 h1 {
+  color: #111827 !important;
+}
+
+html:not(.dark) main .bg-charcoal-900 p,
+html.light main .bg-charcoal-900 p {
+  color: #4B5563 !important;
+}
+
+html:not(.dark) main .bg-charcoal-900 label,
+html.light main .bg-charcoal-900 label {
+  color: #4B5563 !important;
+}
+
+html:not(.dark) main .bg-charcoal-900 input,
+html:not(.dark) main .bg-charcoal-900 select,
+html.light main .bg-charcoal-900 input,
+html.light main .bg-charcoal-900 select {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+  border: 1px solid #D1D5DB !important;
+}
+
+html:not(.dark) main .bg-charcoal-900 .border-charcoal-800,
+html.light main .bg-charcoal-900 .border-charcoal-800 {
+  border-color: #D1D5DB !important;
+}
+
+html:not(.dark) main .bg-charcoal-900 .w-12.h-12.bg-charcoal-800,
+html.light main .bg-charcoal-900 .w-12.h-12.bg-charcoal-800 {
+  background-color: #F4F5F6 !important;
+  border-color: #D1D5DB !important;
+}
+
+html:not(.dark) main .bg-charcoal-900 .text-gray-400,
+html.light main .bg-charcoal-900 .text-gray-400 {
+  color: #4B5563 !important;
+}
+
+/* Back to Top Button in Light Mode */
+html:not(.dark) #back-to-top,
+html.light #back-to-top {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+  border: 1px solid #D1D5DB !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+html:not(.dark) #back-to-top:hover,
+html.light #back-to-top:hover {
+  background-color: #C83B25 !important;
+  color: #FFFFFF !important;
+  border-color: #C83B25 !important;
+}
+
+/* ==========================================================================
+   2. DARK MODE SYSTEM
+   Maintains crisp dark industrial aesthetic with zero contrast issues
+   ========================================================================== */
+html.dark {
+  --warm-white: #0c0e12;
+  --concrete-50: #11141a;
+  --concrete-100: #171b22;
+  --concrete-200: #222834;
+  --concrete-300: #4b5563;
+  --concrete-400: #9ca3af;
+  --concrete-500: #cbd5e1;
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0c0e12 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .bg-warm-white {
+  background-color: #0c0e12 !important;
+}
+
+html.dark .bg-white {
+  background-color: #131720 !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .bg-concrete-100,
+html.dark .bg-gray-50 {
+  background-color: #171b24 !important;
+  color: #cbd5e1 !important;
+}
+
+html.dark .bg-gray-100 {
+  background-color: #1f2532 !important;
+}
+
+html.dark .text-gray-900,
+html.dark .text-gray-800 {
+  color: #f8fafc !important;
+}
+
+html.dark .text-gray-700,
+html.dark .text-gray-600 {
+  color: #cbd5e1 !important;
+}
+
+html.dark .text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+html.dark .border-gray-100,
+html.dark .border-gray-200,
+html.dark .border-gray-300,
+html.dark .border-concrete-200 {
+  border-color: #242b38 !important;
+}
+
+html.dark .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #242b38 !important;
+}
+
+/* Product Card in Dark Mode */
+html.dark .product-card {
+  background-color: #131720 !important;
+  border-color: #242b38 !important;
+}
+html.dark .product-card:hover {
+  border-color: var(--brick-red) !important;
+  box-shadow: 0 16px 32px rgba(0,0,0,0.6) !important;
+}
+
+/* Form Inputs in Dark Mode */
+html.dark input:not([type="checkbox"]):not([type="radio"]),
+html.dark select,
+html.dark textarea {
+  background-color: #171b24 !important;
+  color: #ffffff !important;
+  border-color: #333c4d !important;
+}
+html.dark input:focus,
+html.dark select:focus,
+html.dark textarea:focus {
+  border-color: var(--industrial-orange) !important;
+}
+
+/* Filter buttons in Dark Mode */
+html.dark .filter-btn:not(.active) {
+  background-color: #131720 !important;
+  color: #94a3b8 !important;
+  border-color: #242b38 !important;
+}
+html.dark .filter-btn:not(.active):hover {
+  color: #ffffff !important;
+  border-color: var(--brick-red) !important;
+}
+
+html.dark .faq-item {
+  background-color: #131720 !important;
+  border-color: #242b38 !important;
+}
+
+html.dark .btn-outline-dark {
+  border-color: #4b5563 !important;
+  color: #e2e8f0 !important;
+}
+html.dark .btn-outline-dark:hover {
+  background-color: #ffffff !important;
+  color: #0d0f12 !important;
+}
+
+/* Dark Mode Footer Preservations */
+html.dark footer,
+html.dark .site-footer {
+  background-color: #0a0b0d !important;
+  color: #b5bcc7 !important;
+  border-color: #1e2126 !important;
+}
+
+html.dark footer h1,
+html.dark footer h2,
+html.dark footer h3,
+html.dark footer h4,
+html.dark footer .font-heading,
+html.dark footer .text-white {
+  color: #ffffff !important;
+}
+
+html.dark footer p,
+html.dark footer .text-concrete-400 {
+  color: #9ca3af !important;
+}
+
+html.dark footer a:not(.btn-brick):not(.btn-orange):not(.btn-outline-concrete) {
+  color: #cbd5e1 !important;
+}
+
+html.dark footer a:not(.btn-brick):not(.btn-orange):not(.btn-outline-concrete):hover {
+  color: #ea580c !important;
+}
+
+html.dark footer .border-charcoal-800 {
+  border-color: #1e2126 !important;
+}
+
+html.dark footer .btn-orange {
+  background-color: #ea580c !important;
+  color: #ffffff !important;
+  border-color: #ea580c !important;
+}
+
+html.dark footer .btn-outline-concrete {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+html.dark footer .btn-outline-concrete:hover {
+  background-color: #ffffff !important;
+  color: #121316 !important;
+  border-color: #ffffff !important;
+}
+
+html.dark header.site-header {
+  background-color: #121316 !important;
+  border-color: #2b2f36 !important;
+}
+
+html.dark header.site-header.scrolled {
+  background-color: rgba(18, 19, 22, 0.98) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+html.dark .nav-link-item {
+  color: #e2e8f0 !important;
+}
+
+html.dark .nav-link-item:hover {
+  color: #ea580c !important;
+}
+
+html.dark .nav-dropdown {
+  background-color: #121316 !important;
+  border-color: #2b2f36 !important;
+}
+
+html.dark .nav-dropdown a {
+  color: #cbd5e1 !important;
+}
+
+html.dark .nav-dropdown a:hover {
+  background-color: var(--brick-red) !important;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   3. RTL (RIGHT-TO-LEFT) BIDIRECTIONAL SYSTEM
+   ========================================================================== */
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+  font-family: var(--font-rtl);
+}
+
+[dir="rtl"] h1, 
+[dir="rtl"] h2, 
+[dir="rtl"] h3, 
+[dir="rtl"] h4, 
+[dir="rtl"] h5, 
+[dir="rtl"] h6,
+[dir="rtl"] .font-heading {
+  font-family: var(--font-rtl), var(--font-heading);
+  letter-spacing: 0;
+}
+
+/* Reverse flex and space utilities */
+[dir="rtl"] .space-x-1 > :not([hidden]) ~ :not([hidden]),
+[dir="rtl"] .space-x-1\.5 > :not([hidden]) ~ :not([hidden]),
+[dir="rtl"] .space-x-2 > :not([hidden]) ~ :not([hidden]),
+[dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]),
+[dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]),
+[dir="rtl"] .space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1 !important;
+}
+
+/* Dropdown positions in RTL */
+[dir="rtl"] .nav-dropdown {
+  left: auto !important;
+  right: 0 !important;
+}
+
+/* Mobile drawer in RTL */
+#mobile-drawer {
+  transition: transform 0.3s ease-in-out;
+}
+[dir="rtl"] #mobile-drawer {
+  right: auto !important;
+  left: 0 !important;
+  transform: translateX(-100%) !important;
+  border-left: none !important;
+  border-right: 1px solid var(--charcoal-700) !important;
+}
+
+[dir="rtl"] #mobile-drawer.drawer-open,
+[dir="rtl"] #mobile-drawer.translate-x-0 {
+  transform: translateX(0) !important;
+}
+
+/* Toast container in RTL */
+[dir="rtl"] #toast-container {
+  right: auto !important;
+  left: 24px !important;
+}
+
+[dir="rtl"] .toast-msg {
+  border-left: none !important;
+  border-right: 4px solid var(--brick-red) !important;
+  animation: toastSlideInRTL 0.35s ease forwards !important;
+}
+
+@keyframes toastSlideInRTL {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Back to top button in RTL */
+[dir="rtl"] #back-to-top {
+  left: auto !important;
+  right: 24px !important;
+}
+
+/* Icon flipping */
+[dir="rtl"] .fa-arrow-right::before {
+  content: "\f060" !important;
+}
+
+[dir="rtl"] .fa-arrow-left::before {
+  content: "\f061" !important;
+}
+
+/* Margin and padding directional overrides */
+[dir="rtl"] .border-l {
+  border-left-width: 0 !important;
+  border-right-width: 1px !important;
+}
+[dir="rtl"] .border-l-4 {
+  border-left-width: 0 !important;
+  border-right-width: 4px !important;
+}
+[dir="rtl"] .pl-4 {
+  padding-left: 0 !important;
+  padding-right: 1rem !important;
+}
+[dir="rtl"] .pr-4 {
+  padding-right: 0 !important;
+  padding-left: 1rem !important;
+}
+[dir="rtl"] .mr-1, [dir="rtl"] .mr-1\.5, [dir="rtl"] .mr-2, [dir="rtl"] .mr-3 {
+  margin-right: 0 !important;
+  margin-left: 0.5rem !important;
+}
+[dir="rtl"] .ml-1, [dir="rtl"] .ml-2, [dir="rtl"] .ml-3 {
+  margin-left: 0 !important;
+  margin-right: 0.5rem !important;
+}
+[dir="rtl"] .text-right {
+  text-align: left !important;
+}
+[dir="rtl"] .text-left {
+  text-align: right !important;
+}
+
+/* ==========================================================================
+   4. NAVBAR CONTROLS: LTR/RTL & DARK/LIGHT SWITCHERS
+   ========================================================================== */
+.navbar-dir-switch {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 2px;
+  user-select: none;
+}
+
+.dir-opt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 7px;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  border-radius: 3px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  line-height: 1;
+}
+
+.dir-opt-btn:hover {
+  color: #ffffff;
+}
+
+.dir-opt-btn.active {
+  background-color: var(--brick-red);
+  color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(200, 59, 37, 0.4);
+}
+
+.navbar-theme-switch {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 2px;
+  user-select: none;
+}
+
+.theme-opt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 22px;
+  font-size: 11px;
+  border-radius: 3px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+.theme-opt-btn:hover {
+  color: #ffffff;
+}
+
+.theme-opt-btn.active {
+  background-color: var(--industrial-orange);
+  color: #ffffff !important;
+  box-shadow: 0 2px 4px rgba(234, 88, 12, 0.4);
+}
+
+/* ==========================================================================
+   5. BASE RESETS & TYPOGRAPHY
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: var(--font-heading);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Industrial Pattern & Overlays */
+.bg-industrial-grid {
+  background-image: 
+    linear-gradient(to right, rgba(0,0,0,0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bg-industrial-grid-dark {
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #17191d;
+}
+::-webkit-scrollbar-thumb {
+  background: #3c424c;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brick-red);
+}
+
+/* ==========================================================================
+   6. INDUSTRIAL BUTTONS SYSTEM
+   ========================================================================== */
+.btn-brick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--brick-red);
+  color: #ffffff !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.75rem;
+  font-size: 1.05rem;
+  border: 2px solid var(--brick-red);
+  border-radius: 0.25rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: var(--shadow-brick);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-brick:hover {
+  background-color: var(--brick-red-hover);
+  border-color: var(--brick-red-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -6px rgba(200, 59, 37, 0.45);
+}
+
+.btn-orange {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--industrial-orange);
+  color: #ffffff !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.75rem;
+  font-size: 1.05rem;
+  border: 2px solid var(--industrial-orange);
+  border-radius: 0.25rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-orange:hover {
+  background-color: var(--industrial-orange-hover);
+  border-color: var(--industrial-orange-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -6px rgba(234, 88, 12, 0.4);
+}
+
+.btn-outline-concrete {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.75rem;
+  font-size: 1.05rem;
+  border-radius: 0.25rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-outline-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  color: var(--charcoal-900) !important;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: 2px solid var(--charcoal-900);
+  border-radius: 0.25rem;
+  transition: all 0.25s ease;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.btn-outline-dark:hover {
+  background-color: var(--charcoal-900);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   7. STICKY NAVBAR TRANSITIONS & DROPDOWN
+   ========================================================================== */
+.site-header {
+  transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-dropdown {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nav-item-dropdown:hover .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   8. PRODUCT CARDS & METRICS
+   ========================================================================== */
+.product-card {
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  border: 1px solid var(--border-color);
+}
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-industrial);
+  border-color: var(--brick-red);
+}
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+.product-img {
+  transition: transform 0.5s ease;
+}
+
+.spec-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 0.2rem 0.55rem;
+  background-color: var(--concrete-100);
+  color: var(--charcoal-800);
+  border-radius: 0.2rem;
+  border-left: 3px solid var(--brick-red);
+}
+
+.stat-card {
+  border-bottom: 4px solid var(--brick-red);
+  transition: transform 0.3s ease;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  border-bottom-color: var(--industrial-orange);
+}
+
+/* ==========================================================================
+   9. MODALS, TOASTS & INTERACTIVE CONTROLS
+   ========================================================================== */
+.modal-overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal-container {
+  transform: scale(0.95) translateY(20px);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.modal-overlay.active .modal-container {
+  transform: scale(1) translateY(0);
+}
+
+#toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  pointer-events: none;
+}
+.toast-msg {
+  pointer-events: auto;
+  min-width: 300px;
+  max-width: 420px;
+  padding: 14px 18px;
+  border-radius: 4px;
+  background-color: #17191d;
+  color: #ffffff;
+  border-left: 4px solid var(--brick-red);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  animation: toastSlideIn 0.35s ease forwards;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.toast-msg.toast-success {
+  border-left-color: #10b981;
+}
+.toast-msg.toast-info {
+  border-left-color: var(--industrial-orange);
+}
+.toast-msg.toast-error {
+  border-left-color: #ef4444;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.filter-btn.active {
+  background-color: var(--brick-red) !important;
+  color: #ffffff !important;
+  border-color: var(--brick-red) !important;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+}
+.faq-item.active .faq-answer {
+  max-height: 400px;
+  transition: max-height 0.35s ease-in-out;
+}
+.faq-item.active .faq-icon {
+  transform: rotate(180deg);
+}
+
+#back-to-top {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 900;
+  width: 44px;
+  height: 44px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+#back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+#back-to-top:hover {
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   TITAN BRICK ADAPTIVE BRAND & FOOTER SYSTEM
+   ========================================================================== */
+
+/* Navbar Brand Title */
+.nav-brand-title {
+  color: var(--text-heading);
+  transition: color 0.3s ease;
+}
+html:not(.dark) .nav-brand-title,
+html.light .nav-brand-title {
+  color: #111827 !important;
+}
+html.dark .nav-brand-title {
+  color: #FFFFFF !important;
+}
+
+/* Footer Brand */
+.footer-brand {
+  color: var(--text-heading);
+  transition: color 0.3s ease;
+}
+html:not(.dark) .footer-brand,
+html.light .footer-brand {
+  color: #111827 !important;
+}
+html.dark .footer-brand {
+  color: #FFFFFF !important;
+}
+
+/* Footer Section Headings (Pages, Plant Dispatch, Contractor Access) */
+.footer-heading {
+  color: var(--text-heading);
+  transition: color 0.3s ease;
+}
+html:not(.dark) .footer-heading,
+html.light .footer-heading {
+  color: #111827 !important;
+}
+html.dark .footer-heading {
+  color: #FFFFFF !important;
+}
+
+/* Footer Phone Link */
+.footer-phone {
+  color: var(--text-heading);
+  transition: color 0.3s ease;
+}
+html:not(.dark) .footer-phone,
+html.light .footer-phone {
+  color: #171C26 !important;
+}
+html:not(.dark) .footer-phone:hover,
+html.light .footer-phone:hover {
+  color: #C83B25 !important;
+}
+html.dark .footer-phone {
+  color: #FFFFFF !important;
+}
+html.dark .footer-phone:hover {
+  color: #EA580C !important;
+}
+
+/* Footer Buttons */
+.btn-portal {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 10px 16px;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+html:not(.dark) .btn-portal,
+html.light .btn-portal {
+  background-color: #C83B25 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #C83B25 !important;
+}
+html:not(.dark) .btn-portal:hover,
+html.light .btn-portal:hover {
+  background-color: #9C2E1B !important;
+  border-color: #9C2E1B !important;
+  color: #FFFFFF !important;
+}
+html.dark .btn-portal {
+  background-color: #EA580C !important;
+  color: #FFFFFF !important;
+  border: 2px solid #EA580C !important;
+}
+html.dark .btn-portal:hover {
+  background-color: #C2410C !important;
+  border-color: #C2410C !important;
+  color: #FFFFFF !important;
+}
+
+.btn-register {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 10px 16px;
+  border-radius: 4px;
+  transition: all 0.25s ease;
+}
+html:not(.dark) .btn-register,
+html.light .btn-register {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+  border: 1.5px solid #D1D5DB !important;
+}
+html:not(.dark) .btn-register:hover,
+html.light .btn-register:hover {
+  background-color: #F4F5F6 !important;
+  border-color: #C83B25 !important;
+  color: #C83B25 !important;
+}
+html.dark .btn-register {
+  background-color: transparent !important;
+  color: #dce0e6 !important;
+  border: 1.5px solid #3c424c !important;
+}
+html.dark .btn-register:hover {
+  background-color: #1e2126 !important;
+  border-color: #EA580C !important;
+  color: #FFFFFF !important;
+}
+
+/* ==========================================================================
+   TITAN BRICK PRECISION INDUSTRIAL NAVBAR SYSTEM
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  transition: all 0.25s ease;
+}
+
+.navbar-container {
+  height: 105px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+}
+
+/* Logo Alignment */
+.navbar-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  flex-shrink: 0 !important;
+  min-width: 280px !important;
+  max-width: 360px !important;
+  text-decoration: none !important;
+}
+
+.navbar-brand .nav-brand-title {
+  font-family: var(--font-heading) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1 !important;
+}
+
+.navbar-tagline {
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  line-height: 1.2 !important;
+}
+
+html:not(.dark) .navbar-tagline,
+html.light .navbar-tagline {
+  color: #64748B !important;
+}
+html.dark .navbar-tagline {
+  color: #b5bcc7 !important;
+}
+
+/* Navigation Links */
+.navbar-nav {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.nav-link-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  padding: 10px 12px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+}
+
+.nav-link-item.active-nav,
+.nav-link-item.text-brick-red {
+  color: #C83B25 !important;
+}
+
+.nav-link-item.active-nav::after,
+.nav-link-item.text-brick-red::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 12px;
+  right: 12px;
+  height: 2.5px;
+  background-color: #C83B25;
+  border-radius: 2px;
+}
+
+/* Right-side Actions */
+.navbar-actions {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  gap: 12px !important;
+}
+
+/* Get a Quote Button in Navbar */
+.navbar-quote-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 12px 22px !important;
+  border-radius: 4px !important;
+  background-color: #C83B25 !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  height: 44px !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 12px rgba(200, 59, 37, 0.3) !important;
+}
+.navbar-quote-btn:hover {
+  background-color: #9C2E1B !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 16px rgba(200, 59, 37, 0.45) !important;
+}
+
+/* RTL Layout for Navbar */
+html[dir="rtl"] .navbar-container {
+  flex-direction: row !important;
+}
+html[dir="rtl"] .navbar-brand {
+  margin-left: 0 !important;
+}
+html[dir="rtl"] .navbar-tagline {
+  letter-spacing: 0.05em !important;
+  font-family: var(--font-rtl), var(--font-mono) !important;
+}
+html[dir="rtl"] .nav-dropdown {
+  right: 0 !important;
+  left: auto !important;
+}
+html[dir="rtl"] .nav-link-item i.fa-chevron-down {
+  margin-right: 4px !important;
+  margin-left: 0 !important;
+}
+html[dir="rtl"] .navbar-quote-btn i {
+  margin-left: 6px !important;
+  margin-right: 0 !important;
+}
+
+/* ==========================================================================
+   TITAN BRICK HIGH-CONTRAST INDUSTRIAL CTA SECTION (LIGHT & DARK MODES)
+   ========================================================================== */
+.industrial-cta-box {
+  background-color: #34373B !important;
+  border: 1px solid #4B5563 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Small Label */
+.industrial-cta-box .cta-label {
+  color: #FF8A36 !important;
+  font-family: var(--font-mono) !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+.industrial-cta-box .cta-label i {
+  color: #FF7135 !important;
+}
+
+/* Main Heading */
+.industrial-cta-box h2,
+.industrial-cta-box h3,
+.industrial-cta-box .cta-heading {
+  color: #FFFFFF !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.15 !important;
+}
+
+/* Description Paragraph */
+.industrial-cta-box p,
+.industrial-cta-box .cta-desc {
+  color: #E2E5E9 !important;
+  font-family: var(--font-body) !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+}
+
+/* Supporting Text & Perks */
+.industrial-cta-box .cta-perks {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: 20px !important;
+}
+.industrial-cta-box .cta-perk-item {
+  color: #FFFFFF !important;
+  font-family: var(--font-mono) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+.industrial-cta-box .cta-perk-item i {
+  color: #20C997 !important;
+}
+
+/* Primary CTA Button: Request Bulk Quotation */
+.industrial-cta-box .cta-btn-primary {
+  background-color: #C83B25 !important;
+  color: #FFFFFF !important;
+  border: 2px solid #C83B25 !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 14px 28px !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 14px rgba(200, 59, 37, 0.4) !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  min-height: 50px !important;
+}
+.industrial-cta-box .cta-btn-primary i {
+  color: #FFFFFF !important;
+  font-size: 15px !important;
+}
+.industrial-cta-box .cta-btn-primary:hover {
+  background-color: #9C2E1B !important;
+  border-color: #9C2E1B !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(200, 59, 37, 0.5) !important;
+}
+
+/* Secondary CTA Button: Schedule Plant Visit */
+.industrial-cta-box .cta-btn-secondary {
+  background-color: #FFFFFF !important;
+  color: #171C26 !important;
+  border: 2px solid #FFFFFF !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 14px 28px !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  transition: all 0.25s ease !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  font-size: 14px !important;
+  min-height: 50px !important;
+}
+.industrial-cta-box .cta-btn-secondary i {
+  color: #171C26 !important;
+  font-size: 15px !important;
+}
+.industrial-cta-box .cta-btn-secondary:hover {
+  background-color: #F4F5F6 !important;
+  border-color: #C83B25 !important;
+  color: #C83B25 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+.industrial-cta-box .cta-btn-secondary:hover i {
+  color: #C83B25 !important;
+}
+
+/* RTL for CTA perks and buttons */
+html[dir="rtl"] .industrial-cta-box .cta-perk-item i {
+  margin-left: 6px !important;
+  margin-right: 0 !important;
+}
+html[dir="rtl"] .industrial-cta-box .cta-label i {
+  margin-left: 8px !important;
+  margin-right: 0 !important;
+}
+html[dir="rtl"] .industrial-cta-box .cta-btn-primary i,
+html[dir="rtl"] .industrial-cta-box .cta-btn-secondary i {
+  margin-left: 8px !important;
+  margin-right: 0 !important;
+}
+
+/* ==========================================================================
+   TITAN BRICK DEFINITIVE PERMANENT NAVBAR ARCHITECTURE
+   Guaranteed Zero Overflow, Never Cropped, Solid Opaque, 100% Viewport Width
+   ========================================================================== */
+
+/* Universal Scroll Clearance for Sticky Navbar */
+html {
+  scroll-padding-top: 115px !important;
+}
+
+/* Header Container */
+.site-header {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  box-sizing: border-box !important;
+  z-index: 1000 !important;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+/* Solid Opaque Backgrounds (Zero Transparency) */
+html:not(.dark) .site-header,
+html.light .site-header,
+html:not(.dark) .site-header.scrolled,
+html.light .site-header.scrolled {
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid #D1D5DB !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06) !important;
+}
+
+html.dark .site-header,
+html.dark .site-header.scrolled {
+  background-color: #121316 !important;
+  border-bottom: 1px solid #2B2F36 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Wrapper & Container */
+.navbar-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding-left: clamp(16px, 2.5vw, 40px) !important;
+  padding-right: clamp(16px, 2.5vw, 40px) !important;
+  margin: 0 auto !important;
+}
+
+.navbar-container {
+  height: 105px !important;
+  min-height: 105px !important;
+  max-height: 105px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  gap: 16px !important;
+}
+
+/* 1. Logo Section (Fixed Width, Far Left, Vertically Centered) */
+.navbar-brand {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  flex-shrink: 0 !important;
+  flex-grow: 0 !important;
+  text-decoration: none !important;
+  box-sizing: border-box !important;
+}
+
+.navbar-logo-icon {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+  background-color: #C83B25 !important;
+  border-radius: 6px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #FFFFFF !important;
+  font-size: 24px !important;
+  box-shadow: 0 4px 10px rgba(200, 59, 37, 0.35) !important;
+  flex-shrink: 0 !important;
+  transition: background-color 0.2s ease !important;
+}
+.navbar-brand:hover .navbar-logo-icon {
+  background-color: #9C2E1B !important;
+}
+
+.navbar-brand-text {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+}
+
+.navbar-brand-title-wrap {
+  display: flex !important;
+  align-items: center !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+.navbar-brand-title-wrap .nav-brand-title {
+  font-family: var(--font-heading) !important;
+  font-weight: 800 !important;
+  font-size: 26px !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+}
+html:not(.dark) .navbar-brand-title-wrap .nav-brand-title,
+html.light .navbar-brand-title-wrap .nav-brand-title {
+  color: #111827 !important;
+}
+html.dark .navbar-brand-title-wrap .nav-brand-title {
+  color: #FFFFFF !important;
+}
+
+.navbar-brand-title-wrap .nav-brand-accent {
+  font-family: var(--font-heading) !important;
+  font-weight: 800 !important;
+  font-size: 26px !important;
+  letter-spacing: 0.05em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  color: #C83B25 !important;
+  margin-left: 5px !important;
+}
+
+.navbar-tagline {
+  font-family: var(--font-mono) !important;
+  font-size: 10.5px !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  line-height: 1.2 !important;
+  margin-top: 4px !important;
+}
+html:not(.dark) .navbar-tagline,
+html.light .navbar-tagline {
+  color: #64748B !important;
+}
+html.dark .navbar-tagline {
+  color: #9CA3AF !important;
+}
+
+/* 2. Desktop Navigation Links (Center, Single Horizontal Line) */
+.navbar-nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  gap: 2px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+.nav-link-item {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  padding: 8px 10px !important;
+  font-size: 13.5px !important;
+  border-radius: 4px !important;
+  transition: all 0.2s ease !important;
+  position: relative !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
+  border: none !important;
+  background: transparent !important;
+}
+
+html:not(.dark) .nav-link-item,
+html.light .nav-link-item {
+  color: #171C26 !important;
+}
+html:not(.dark) .nav-link-item:hover,
+html.light .nav-link-item:hover {
+  color: #C83B25 !important;
+}
+
+html.dark .nav-link-item {
+  color: #E2E8F0 !important;
+}
+html.dark .nav-link-item:hover {
+  color: #EA580C !important;
+}
+
+.nav-link-item.active-nav,
+.nav-link-item.text-brick-red {
+  color: #C83B25 !important;
+}
+
+.nav-link-item.active-nav::after,
+.nav-link-item.text-brick-red::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  right: 10px;
+  height: 2.5px;
+  background-color: #C83B25;
+  border-radius: 2px;
+}
+
+.nav-link-item i.fa-chevron-down {
+  font-size: 10px !important;
+  margin-left: 4px !important;
+}
+
+/* Nav Item Dropdown */
+.nav-item-dropdown {
+  position: relative !important;
+  display: inline-block !important;
+}
+
+.nav-dropdown {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  z-index: 1050 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25) !important;
+  padding: 8px 0 !important;
+  margin-top: 4px !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(8px) !important;
+  transition: all 0.2s ease !important;
+  pointer-events: none !important;
+}
+
+.nav-item-dropdown:hover .nav-dropdown,
+.nav-item-dropdown:focus-within .nav-dropdown {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
+html:not(.dark) .nav-dropdown,
+html.light .nav-dropdown {
+  background-color: #FFFFFF !important;
+  border: 1px solid #D1D5DB !important;
+}
+html:not(.dark) .nav-dropdown a,
+html.light .nav-dropdown a {
+  color: #171C26 !important;
+}
+html:not(.dark) .nav-dropdown a:hover,
+html.light .nav-dropdown a:hover {
+  background-color: #F4F5F6 !important;
+  color: #C83B25 !important;
+}
+
+html.dark .nav-dropdown {
+  background-color: #17191D !important;
+  border: 1px solid #2B2F36 !important;
+}
+html.dark .nav-dropdown a {
+  color: #CBD5E1 !important;
+}
+html.dark .nav-dropdown a:hover {
+  background-color: #C83B25 !important;
+  color: #FFFFFF !important;
+}
+
+/* 3. Action Group: Controls & Get a Quote (Far Right, Fixed Width, Never Cut Off) */
+.navbar-actions {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  gap: 10px !important;
+  box-sizing: border-box !important;
+}
+
+/* Direction Switcher */
+.navbar-dir-switch {
+  display: inline-flex !important;
+  align-items: center !important;
+  border-radius: 4px !important;
+  padding: 2px !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+}
+html:not(.dark) .navbar-dir-switch,
+html.light .navbar-dir-switch {
+  background-color: #F4F5F6 !important;
+  border: 1px solid #D1D5DB !important;
+}
+html.dark .navbar-dir-switch {
+  background-color: #1E2126 !important;
+  border: 1px solid #2B2F36 !important;
+}
+
+.dir-opt-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 3px 8px !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  font-family: var(--font-mono) !important;
+  border-radius: 3px !important;
+  border: none !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  line-height: 1 !important;
+  transition: all 0.2s ease !important;
+}
+html:not(.dark) .dir-opt-btn,
+html.light .dir-opt-btn {
+  color: #64748B !important;
+}
+html.dark .dir-opt-btn {
+  color: #9CA3AF !important;
+}
+.dir-opt-btn.active {
+  background-color: #C83B25 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 1px 3px rgba(200, 59, 37, 0.4) !important;
+}
+
+/* Theme Switcher */
+.navbar-theme-switch {
+  display: inline-flex !important;
+  align-items: center !important;
+  border-radius: 4px !important;
+  padding: 2px !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+}
+html:not(.dark) .navbar-theme-switch,
+html.light .navbar-theme-switch {
+  background-color: #F4F5F6 !important;
+  border: 1px solid #D1D5DB !important;
+}
+html.dark .navbar-theme-switch {
+  background-color: #1E2126 !important;
+  border: 1px solid #2B2F36 !important;
+}
+
+.theme-opt-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 26px !important;
+  height: 22px !important;
+  font-size: 11px !important;
+  border-radius: 3px !important;
+  border: none !important;
+  background: transparent !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+html:not(.dark) .theme-opt-btn,
+html.light .theme-opt-btn {
+  color: #64748B !important;
+}
+html.dark .theme-opt-btn {
+  color: #9CA3AF !important;
+}
+.theme-opt-btn.active {
+  background-color: #EA580C !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 1px 3px rgba(234, 88, 12, 0.4) !important;
+}
+
+/* Get a Quote Button (Fixed Width, Far Right, Never Clipped) */
+.navbar-quote-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  font-family: var(--font-heading) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  padding: 10px 18px !important;
+  border-radius: 4px !important;
+  background-color: #C83B25 !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  cursor: pointer !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  height: 42px !important;
+  font-size: 13px !important;
+  transition: all 0.25s ease !important;
+  box-shadow: 0 4px 10px rgba(200, 59, 37, 0.3) !important;
+  text-decoration: none !important;
+}
+.navbar-quote-btn:hover {
+  background-color: #9C2E1B !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 14px rgba(200, 59, 37, 0.45) !important;
+}
+.navbar-quote-btn i {
+  color: #FFFFFF !important;
+  font-size: 13px !important;
+}
+
+/* Hamburger Toggle Button */
+.navbar-hamburger-btn {
+  display: none !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 4px !important;
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  cursor: pointer !important;
+  font-size: 20px !important;
+  flex-shrink: 0 !important;
+  transition: all 0.2s ease !important;
+}
+html:not(.dark) .navbar-hamburger-btn,
+html.light .navbar-hamburger-btn {
+  color: #171C26 !important;
+  border-color: #D1D5DB !important;
+}
+html:not(.dark) .navbar-hamburger-btn:hover,
+html.light .navbar-hamburger-btn:hover {
+  background-color: #F4F5F6 !important;
+  color: #C83B25 !important;
+}
+html.dark .navbar-hamburger-btn {
+  color: #E2E8F0 !important;
+  border-color: #2B2F36 !important;
+}
+html.dark .navbar-hamburger-btn:hover {
+  background-color: #1E2126 !important;
+  color: #FFFFFF !important;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE BREAKPOINTS (PRECISION ENGINEERING)
+   -------------------------------------------------------------------------- */
+
+/* Breakpoint: 1200px - 1439px (Laptops & Standard Desktops) */
+@media (min-width: 1200px) and (max-width: 1439px) {
+  .navbar-container {
+    gap: 10px !important;
+  }
+  .navbar-brand {
+    gap: 10px !important;
+  }
+  .navbar-logo-icon {
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    min-height: 42px !important;
+    font-size: 20px !important;
+  }
+  .navbar-brand-title-wrap .nav-brand-title,
+  .navbar-brand-title-wrap .nav-brand-accent {
+    font-size: 22px !important;
+  }
+  .navbar-tagline {
+    font-size: 9px !important;
+    letter-spacing: 0.08em !important;
+  }
+  .nav-link-item {
+    font-size: 11.5px !important;
+    padding: 6px 7px !important;
+    letter-spacing: 0.02em !important;
+  }
+  .navbar-actions {
+    gap: 8px !important;
+  }
+  .navbar-quote-btn {
+    padding: 8px 14px !important;
+    font-size: 12px !important;
+    height: 38px !important;
+  }
+}
+
+/* Breakpoint: < 1200px (Tablets & Screens up to 1199px) */
+@media (max-width: 1199px) {
+  .navbar-nav {
+    display: none !important;
+  }
+  .navbar-hamburger-btn {
+    display: inline-flex !important;
+  }
+  .navbar-container {
+    height: 90px !important;
+    min-height: 90px !important;
+    max-height: 90px !important;
+  }
+  .navbar-brand-title-wrap .nav-brand-title,
+  .navbar-brand-title-wrap .nav-brand-accent {
+    font-size: 22px !important;
+  }
+  .navbar-tagline {
+    font-size: 9px !important;
+  }
+}
+
+/* Breakpoint: < 768px (Mobiles) */
+@media (max-width: 767px) {
+  .navbar-container {
+    height: 80px !important;
+    min-height: 80px !important;
+    max-height: 80px !important;
+    gap: 8px !important;
+  }
+  .navbar-logo-icon {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    font-size: 18px !important;
+  }
+  .navbar-brand-title-wrap .nav-brand-title,
+  .navbar-brand-title-wrap .nav-brand-accent {
+    font-size: 19px !important;
+  }
+  .navbar-tagline {
+    display: none !important;
+  }
+  .navbar-dir-switch,
+  .navbar-theme-switch,
+  .navbar-quote-btn {
+    display: none !important;
+  }
+  .navbar-actions {
+    gap: 6px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   RTL SUPPORT
+   -------------------------------------------------------------------------- */
+html[dir="rtl"] .navbar-brand {
+  margin-left: 0 !important;
+}
+html[dir="rtl"] .navbar-brand-title-wrap .nav-brand-accent {
+  margin-left: 0 !important;
+  margin-right: 5px !important;
+}
+html[dir="rtl"] .nav-link-item i.fa-chevron-down {
+  margin-left: 0 !important;
+  margin-right: 4px !important;
+}
+html[dir="rtl"] .nav-dropdown {
+  right: 0 !important;
+  left: auto !important;
+}
+html[dir="rtl"] .navbar-quote-btn i {
+  margin-left: 4px !important;
+  margin-right: 0 !important;
+}
+html[dir="rtl"] #mobile-drawer {
+  right: auto !important;
+  left: 0 !important;
+  transform: translateX(-100%);
+  border-left: none !important;
+  border-right: 1px solid var(--border-color) !important;
+}
+html[dir="rtl"] #mobile-drawer.drawer-open {
+  transform: translateX(0) !important;
+}
+
+/* ==========================================================================
+   MANUFACTURING PROCESS SECTION - COMPREHENSIVE FIX
+   ========================================================================== */
+.manufacturing-process-section {
+  position: relative !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+}
+
+/* Centered Container with Balanced Padding */
+.manufacturing-container {
+  width: 100% !important;
+  max-width: 80rem !important; /* 1280px */
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  box-sizing: border-box !important;
+}
+
+@media (min-width: 640px) {
+  .manufacturing-container {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .manufacturing-container {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+}
+
+/* Grid Layout: Responsive 1 / 2 / 3 / 5 Columns */
+.manufacturing-grid {
+  display: grid !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  align-items: stretch !important;
+  position: relative !important;
+  margin: 0 auto !important;
+}
+
+/* Mobile: 1 card per row */
+@media (max-width: 639px) {
+  .manufacturing-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
+}
+
+/* Tablet (sm): 2 cards per row */
+@media (min-width: 640px) and (max-width: 767px) {
+  .manufacturing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 1.25rem !important;
+  }
+}
+
+/* Tablet (md): 3 cards per row */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .manufacturing-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 1.25rem !important;
+  }
+}
+
+/* Large Desktop (lg and up): All 5 cards in 1 evenly aligned row */
+@media (min-width: 1024px) {
+  .manufacturing-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .manufacturing-grid {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Process Card: Equal Width, Height & Internal Padding */
+.process-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  height: 100% !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  padding: 1.5rem 1.25rem !important;
+  border-radius: 0.5rem !important;
+  position: relative !important;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease !important;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .process-card {
+    padding: 1.25rem 0.85rem !important;
+  }
+}
+
+/* Process Card Light Mode */
+html:not(.dark) .process-card,
+html.light .process-card {
+  background-color: #F8F9FA !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+html:not(.dark) .process-card:hover,
+html.light .process-card:hover {
+  border-color: #C83B25 !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Process Card Dark Mode */
+html.dark .process-card {
+  background-color: #171b24 !important;
+  border: 1px solid #242b38 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+}
+
+html.dark .process-card:hover {
+  border-color: #C83B25 !important;
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Number Circles - Crisp White Numbers (01, 02, 03, 04, 05) */
+.process-step-badge,
+.process-step-number,
+.process-card .process-step-badge,
+.process-card .process-step-number {
+  width: 3.25rem !important;
+  height: 3.25rem !important;
+  min-width: 3.25rem !important;
+  min-height: 3.25rem !important;
+  border-radius: 9999px !important;
+  background-color: #121316 !important;
+  color: #FFFFFF !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto 1.125rem auto !important;
+  font-family: var(--font-heading, 'Barlow Condensed', sans-serif) !important;
+  font-weight: 700 !important;
+  font-size: 1.25rem !important;
+  line-height: 1 !important;
+  text-align: center !important;
+  border: 2px solid transparent !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  user-select: none !important;
+}
+
+/* Force white text on number circles across ALL selectors and modes */
+.process-step-badge,
+.process-step-badge *,
+.process-step-badge span,
+.process-step-number,
+.process-step-number *,
+.process-step-number span,
+html:not(.dark) .process-step-badge,
+html:not(.dark) .process-step-badge *,
+html:not(.dark) .process-step-badge span,
+html.light .process-step-badge,
+html.light .process-step-badge *,
+html.light .process-step-badge span,
+html.dark .process-step-badge,
+html.dark .process-step-badge *,
+html.dark .process-step-badge span {
+  color: #FFFFFF !important;
+  fill: #FFFFFF !important;
+}
+
+/* Highlighted / Orange / Red circle (Normal, Hover, or Active) */
+.process-step-badge.highlight,
+.process-step-badge.highlighted,
+.process-step-badge.active,
+.process-step-badge.bg-brick-red,
+.process-step-badge.bg-industrial-orange,
+.process-card:hover .process-step-badge,
+.process-card:hover .process-step-number,
+.process-step-badge:hover {
+  background-color: #C83B25 !important; /* Titan Brick Red */
+  border-color: #EA580C !important;
+  color: #FFFFFF !important;
+  transform: scale(1.08) !important;
+  box-shadow: 0 4px 14px rgba(200, 59, 37, 0.45) !important;
+}
+
+.process-step-badge.highlight *,
+.process-step-badge.highlighted *,
+.process-step-badge.active *,
+.process-step-badge.bg-brick-red *,
+.process-step-badge.bg-industrial-orange *,
+.process-card:hover .process-step-badge *,
+.process-card:hover .process-step-number * {
+  color: #FFFFFF !important;
+}
+
+/* Card Heading Typography */
+.process-card-title,
+.process-card h4 {
+  font-family: var(--font-heading, 'Barlow Condensed', sans-serif) !important;
+  font-weight: 700 !important;
+  font-size: 1.125rem !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.03em !important;
+  margin-top: 0 !important;
+  margin-bottom: 0.625rem !important;
+  word-break: normal !important;
+  overflow-wrap: break-word !important;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .process-card-title,
+  .process-card h4 {
+    font-size: 1rem !important;
+    letter-spacing: 0.02em !important;
+  }
+}
+
+/* Card Heading Colors */
+html:not(.dark) .process-card-title,
+html:not(.dark) .process-card h4,
+html.light .process-card-title,
+html.light .process-card h4 {
+  color: #111827 !important; /* Dark charcoal / black */
+}
+
+html.dark .process-card-title,
+html.dark .process-card h4 {
+  color: #FFFFFF !important;
+}
+
+/* Card Paragraph Typography & Colors */
+.process-card-desc,
+.process-card p {
+  font-size: 0.8125rem !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+  flex-grow: 1 !important;
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .process-card-desc,
+  .process-card p {
+    font-size: 0.775rem !important;
+    line-height: 1.45 !important;
+  }
+}
+
+html:not(.dark) .process-card-desc,
+html:not(.dark) .process-card p,
+html.light .process-card-desc,
+html.light .process-card p {
+  color: #374151 !important; /* Specific user requirement: #374151 in light mode */
+}
+
+html.dark .process-card-desc,
+html.dark .process-card p {
+  color: #CBD5E1 !important; /* Readable light grey in dark mode */
+}
